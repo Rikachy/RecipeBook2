@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class RecipeBook here.
  *
@@ -8,26 +8,45 @@
 public class RecipeBook
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    private String title;
+    private String author;
+    private String edition;
+    private String publicationDate;
+    private int pageNumber;
+    private ArrayList<Recipe> recipes;
+    private ArrayList<Tags> tags;
     /**
-     * Constructor for objects of class RecipeBook
-     */
+    * Constructor for objects of class RecipeBook
+    */
     public RecipeBook()
     {
-        // initialise instance variables
-        x = 0;
+           
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public void printBookDetails()
     {
-        // put your code here
-        return x + y;
+        
     }
+    
+    public void listAllRecipes()
+    {
+        
+    }
+    
+    public void listByType()
+    {
+        
+    }
+    
+    public void searchByTitle()
+    {
+        
+    }
+    
+    public void searchByIngredient()
+    {
+        
+    }
+    
+    
 }
