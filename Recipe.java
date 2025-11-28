@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+import java.util.Scanner; 
 /**
  * Write a description of class Recipe here.
  *
@@ -8,26 +10,56 @@
 public class Recipe
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int steps;
+    private String ingredients;
+    private double prepTime;
+    private ArrayList<Integer> ratings;
+    private String description ;
 
     /**
      * Constructor for objects of class Recipe
      */
     public Recipe()
     {
-        // initialise instance variables
-        x = 0;
+        
+        
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * allows the user to add their rating 
      */
-    public int sampleMethod(int y)
+    public void addRating()
     {
-        // put your code here
-        return x + y;
+        
+    }
+    public void addComments()
+    {
+        
+    }
+      /**
+     * //gets all rating and find the mean(average) 
+     */
+    public int calcAverageRating()
+    {
+        
+    }
+
+    public int getAverageRating()
+    {
+        //return averageRating; 
+    }
+
+    public int getmode()
+    {
+        //return mode; 
     }
 }
+/*ingredients quant
+        steps array
+        fix arrows
+        ingredients enum
+        measurement 
+        
+        //class of ingredient 
+          be able to scale 
+  */    
