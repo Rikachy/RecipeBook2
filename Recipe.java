@@ -54,12 +54,4 @@ public class Recipe
         //return mode; 
     }
 }
-/*ingredients quant
-        steps array
-        fix arrows
-        ingredients enum
-        measurement 
-        
-        //class of ingredient 
-          be able to scale 
-  */    
+
