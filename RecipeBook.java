@@ -25,28 +25,46 @@ public class RecipeBook
     
     public void printBookDetails()
     {
-        
+        //Give a brief description of what the book contains, prints the fields title, author, edition, publicationDate,     
     }
     
     public void listAllRecipes()
     {
-        
+        //for loop to print the collection of all the recipes
     }
     
     public void listByType()
     {
-        
+        //for loop to print colletion of all the tags 
     }
     
-    public void searchByTitle()
+    public void searchByTags(Tags tag)
     {
-        
+        //while loop to iterate threw the tags collection and return all the recipes related to that tag 
+    }
+    
+    public void searchSpecificRecipe()
+    {
+        //while loop to iterate threw the recipe collection and check if there is the recipe entered in the parameter   
     }
     
     public void searchByIngredient()
     {
+            
+    }
+    
+    public void printRecipeDetails()
+    {
         
     }
     
+    public void listTopRatedRecipe()
+    {
+        
+    }
     
+    public void addOwnRecipe()
+    {
+        
+    }
 }

@@ -22,5 +22,4 @@ public class Ingredients
         // initialise instance variables
         
     }
-
 }
