@@ -40,27 +40,32 @@ public class RecipeBook
     
     public void searchByTags(Tags tag)
     {
-        //while loop to iterate threw the tags collection and return all the recipes related to that tag 
+        //while loop to iterate through the tags collection and return all the recipes related to that tag 
     }
     
-    public void searchSpecificRecipe()
+    public void searchSpecificRecipe(String recipe)
     {
-        //while loop to iterate threw the recipe collection and check if there is the recipe entered in the parameter   
+        /*while loop to iterate through the recipe collection and check if there is the recipe entered in the parameter
+         * if recipes contains recipe return recipe
+         * else print ("not a recipe")
+         */   
     }
     
-    public void searchByIngredient()
+    public void searchByIngredient(String ingredient)
     {
-            
+        /*for each loop to iterate through recipe collection and 
+         * if it contains the ingredient return all recipes containing that ingredient.
+         */            
     }
     
-    public void printRecipeDetails()
+    public void printRecipeDetails(String recipe)
     {
-        
+        //gets the recipe and prints the description field from the Recipe.Class       
     }
     
     public void listTopRatedRecipe()
     {
-        
+            
     }
     
     public void addOwnRecipe()
