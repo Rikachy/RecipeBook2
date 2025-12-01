@@ -7,5 +7,5 @@
  */
 public enum Tags
 {
- 
+ VEGAN, NUT, DAIRY, SEAFOOD, GLUTEN, SPICY, MEAT
 }

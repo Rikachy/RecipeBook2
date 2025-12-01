@@ -40,9 +40,9 @@ public class Drinks extends Recipe
          */
     }
     
-    public boolean hotOrCold(boolean temperature){
+    public boolean hotOrCold(boolean isHot){
         /*
-        gets isHot field
+        gets isHot parameter
         if true (drink is hot) systm. prints("it is a hot drink...")  return true 
         else (drink is cold) syst. prints("it is a cold drink...") return false 
         */
