@@ -38,6 +38,7 @@ public class Snacks extends Recipe
          * syst prints ("this snack does now have guac")
          */
     }
+    
     /* method used to be called containsNumIngredients
      *normally a snack is meant to be small, so this method help determines
      the size and complexity of the snack

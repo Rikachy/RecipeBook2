@@ -7,27 +7,39 @@
  */
 public class Desserts extends Recipe
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private boolean isBaked;
+    private String texture;
+    private String sweetLevel;
 
     /**
      * Constructor for objects of class Desserts
      */
     public Desserts()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public boolean checkBaked()
     {
-        // put your code here
-        return x + y;
+        /*if(this.isBaked) -> print("this is a baked recipe") return true
+         * else return false
+         */
+        return isBaked;
+    }
+    
+    public String getTexture()
+    {
+        return texture;
+    }
+    
+    public String getSweetLevel()
+    {
+        return sweetLevel;
+    }
+    
+    public boolean isGlutenFree()
+    {
+        //return true if contains gluten
+        return false;
     }
 }

@@ -65,11 +65,11 @@ public class RecipeBook
     
     public void listTopRatedRecipe()
     {
-            
+        //while loop to go through the ratings and compare them and return the highest rated one        
     }
     
     public void addOwnRecipe()
     {
-        
+        //    
     }
 }

@@ -19,7 +19,6 @@ public class Drinks extends Recipe
     {
         
     }
-
     
     public boolean containsAlchohol()
     {
@@ -29,7 +28,6 @@ public class Drinks extends Recipe
         // else return true 
     }
     
-   
     public boolean containsdairy()
     {
         /*get ingrdients from Recipe.class for the recipe of called drink
@@ -40,10 +38,9 @@ public class Drinks extends Recipe
          */
     }
     
-    public boolean hotOrCold(boolean isHot){
+    public boolean hotOrCold(){
         /*
-        gets isHot parameter
-        if true (drink is hot) systm. prints("it is a hot drink...")  return true 
+        if(this.IsHot) -> systm. prints("it is a hot drink...")  return true 
         else (drink is cold) syst. prints("it is a cold drink...") return false 
         */
       

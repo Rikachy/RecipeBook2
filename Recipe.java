@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Scanner; 
 import java.util.HashSet;
 import java.util.List;
-
 /**
  * Write a description of class Recipe here.
  *
@@ -19,7 +18,6 @@ public class Recipe
     private ArrayList<Integer> ratings;
     private String description;
     
-    double scaler ;// needed for scaleRecipe. method 
     /**
      * Constructor for objects of class Recipe
      */
@@ -84,7 +82,7 @@ public class Recipe
         return x;
     }
     // returns a HashSet and not double
-    public HashSet scaleRecipe(double scaler){
+    public HashSet<Integer> scaleRecipe(double scaler){
         /* adjusting the quantity of the ingredients with the scaler input.
          * important to put restriction so you don't go below 0 or in negatives
          * 

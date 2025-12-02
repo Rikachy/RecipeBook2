@@ -8,7 +8,7 @@ import java.util.HashSet;
  */
 public class Ingredients
 {
-    // instance variables - replace the example below with your own
+    
     private double amount;
     private String name;
     private UnitOfMeasurement unit;
@@ -19,7 +19,32 @@ public class Ingredients
      */
     public Ingredients()
     {
-        // initialise instance variables
         
+        
+    }
+    
+    public void scaleAmount(double scale)
+    {
+        //*make a new variable scaledAmount and multiply amount by the parameter  
+    }
+    
+    public double getAmount()
+    {
+        return amount;    
+    }
+    
+    public void setAmount(double newAmount)
+    {
+        amount = newAmount;    
+    }
+    
+    public String getName()
+    {
+        return name;    
+    }
+    
+    public void listAllIngredients()
+    {
+        //for each loop to print all ingredients in the set
     }
 }
