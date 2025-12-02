@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class Snacks here.
@@ -8,15 +9,16 @@
 public class Snacks extends Recipe
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private boolean schoolAppropriate;
+    private String perishability;
+    // instead of having a scale, it would be high/low/medium
 
     /**
      * Constructor for objects of class Snacks
      */
     public Snacks()
     {
-        // initialise instance variables
-        x = 0;
+       
     }
 
     /**
@@ -25,9 +27,26 @@ public class Snacks extends Recipe
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    //a meme method 
+    public boolean checkIfGuacamoly()
     {
-        // put your code here
-        return x + y;
+        /*Goes trough the list of ingreidents needed for the snacks
+         * if one of those elements isequals guacamoly
+         * return true 
+         * systm prints("has guac...")
+         * else return false
+         * syst prints ("this snack does now have guac")
+         */
+    }
+    /* method used to be called containsNumIngredients
+     *normally a snack is meant to be small, so this method help determines
+     the size and complexity of the snack
+    */
+    
+     
+    public int numOfIngredients(){
+        /*returns the size of the HashSet of the wanted recipe
+         * 
+         */
     }
 }
