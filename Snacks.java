@@ -37,6 +37,8 @@ public class Snacks extends Recipe
          * else return false
          * syst prints ("this snack does now have guac")
          */
+        boolean guac = false;
+        return guac;
     }
     
     /* method used to be called containsNumIngredients
@@ -49,5 +51,6 @@ public class Snacks extends Recipe
         /*returns the size of the HashSet of the wanted recipe
          * 
          */
+        return ingredients.size(); 
     }
 }

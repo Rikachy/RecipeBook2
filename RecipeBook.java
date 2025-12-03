@@ -70,6 +70,6 @@ public class RecipeBook
     
     public void addOwnRecipe()
     {
-        //    
+        //get prompts from the the scanner to add the ingredients, steps and preptime    
     }
 }

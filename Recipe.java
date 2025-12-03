@@ -12,11 +12,11 @@ import java.util.List;
 public class Recipe
 {
     // instance variables - replace the example below with your own
-    private ArrayList<String> steps;
-    private HashSet<Ingredients> ingredients;
-    private double prepTime;
-    private ArrayList<Integer> ratings;
-    private String description;
+    protected ArrayList<String> steps;
+    protected HashSet<Ingredients> ingredients;
+    protected double prepTime;
+    protected ArrayList<Integer> ratings;
+    protected String description;
     
     /**
      * Constructor for objects of class Recipe

@@ -25,7 +25,8 @@ public class Drinks extends Recipe
         //get ingrdients from Recipe.class for the recipe of called drink
         //while loop to check if alchohol is in the ingredients list of the called drink
         // return false if doesn't contain
-        // else return true 
+        // else return true
+        return isAlcholholic;
     }
     
     public boolean containsdairy()
@@ -36,6 +37,7 @@ public class Drinks extends Recipe
          return false if doesn't contain
          else return true
          */
+        return hasDairy;
     }
     
     public boolean hotOrCold(){
@@ -43,7 +45,7 @@ public class Drinks extends Recipe
         if(this.IsHot) -> systm. prints("it is a hot drink...")  return true 
         else (drink is cold) syst. prints("it is a cold drink...") return false 
         */
-      
+        return isHot;  
     }
     
 }

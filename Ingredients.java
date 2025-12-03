@@ -19,6 +19,7 @@ public class Ingredients
      */
     public Ingredients()
     {
+        ingredients = new HashSet<>();
         
         
     }
