@@ -39,4 +39,17 @@ public class RecipeBookTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void TestRecipe()
+    {
+        RecipeBook recipeBo1 = new RecipeBook();
+        recipeBo1.printBookDetails();
+        recipeBo1.searchByIngredient("Apple");
+        recipeBo1.addOwnRecipe();
+        recipeBo1.listAllRecipes();
+        recipeBo1.listByType();
+        recipeBo1.searchSpecificRecipe("Ice Tea");
+    }
 }
+

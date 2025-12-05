@@ -39,4 +39,17 @@ public class IngredientsTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void IngredientsTest1()
+    {
+        Ingredients ingredie1 = new Ingredients();
+        assertEquals(1.0, ingredie1.getAmount(), 0.1);
+        assertEquals("Milk", ingredie1.getName());
+        ingredie1.listAllIngredients();
+        ingredie1.listAllIngredients();
+        ingredie1.listAllIngredients();
+        ingredie1.setAmount(2);
+    }
 }
+

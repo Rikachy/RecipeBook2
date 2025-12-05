@@ -39,4 +39,32 @@ public class DessertsTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void TestingDesserts()
+    {
+        Desserts desserts1 = new Desserts();
+        assertEquals(false, desserts1.checkBaked());
+        assertEquals(false, desserts1.isGlutenFree());
+        //Default state of a boolean is false
+        
+        
+        
+        
+        
+        
+        
+    }
+
+    @Test
+    public void Test2Dessers()
+    {
+        Desserts desserts2 = new Desserts();
+        assertEquals("Super Duper Sweet", desserts2.getSweetLevel());
+        
+        assertEquals("Soft", desserts2.getTexture());
+        
+    }
 }
+
+

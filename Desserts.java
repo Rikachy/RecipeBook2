@@ -30,11 +30,13 @@ public class Desserts extends Recipe
     public String getTexture()
     {
         return texture;
+        //implement a list of choices as arrayList so user doesn't input something random
     }
     
     public String getSweetLevel()
     {
         return sweetLevel;
+        //implement a list of choices as arrayList so user doesn't input something random
     }
     
     public boolean isGlutenFree()
