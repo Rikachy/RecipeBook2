@@ -26,7 +26,7 @@ public class RecipeBook
     {
         System.out.println("-------- " + title + " --------");
         System.out.println("  ------  " + "by " + author + "   ------  ");
-        System.out.println(edition + "edition");
+        System.out.println("  ------  " + edition + " edition" + "   ------  ");
         System.out.println("published" + publicationDate);
         System.out.println();     
     }
