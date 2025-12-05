@@ -2,23 +2,25 @@
 /**
  * Write a description of class Comment here.
  *
- * @author (your name)
+ * @username (your name)
  * @version (a version number or a date)
  */
 public class Comment
 {
-    private String author;
+    private String username;
+    private String nameOfRecipe;
     private String text;
     private int rating;
 
     /**
      * Constructor for objects of class Comment
      */
-    public Comment(String author, String text, int rating)
+    public Comment(String username, String text, int rating,String nameOfRecipe )
     {
-        this.author = author;
+        this.username = username;
         this.text = text;
         this.rating = rating;
+        this.nameOfRecipe = nameOfRecipe;
     }
 
     /**
@@ -30,8 +32,18 @@ public class Comment
     public String sampleMethod()
     {
         String details = "Rating: " + rating + "\n"
-                         + "By: " + author + "\n"
+                         + "By: " + username + "\n"
+                         + "    " + nameOfRecipe + "\n"
                          + "    " + text + "\n";
         return details;    
+    }
+    
+            /**
+     * Check whether the given rating is invalid. Return true if it is invalid.
+     * Valid ratings are in the range [1..5].
+     */
+    private boolean ratingInvalid(int rating)
+    {
+        return rating < 0 || rating > 5;
     }
 }

@@ -18,23 +18,59 @@ public class Recipe
     protected ArrayList<Integer> ratings;
     protected String description;
     
+    
+    private ArrayList<Comment> comments;
+    private int rating; 
     /**
      * Constructor for objects of class Recipe
      */
     public Recipe()
     {
-        
-        
+        comments = new ArrayList<>();
     }
     
-   
+        /**
+     * Return the number of customer comments for this item.
+     */
+    public int getNumberOfComments()
+    {
+        return comments.size();
+    }
+    
+        /**
+     * Add a comment to the comment list of this sales item. Return true if
+     * successful; false if the comment was rejected.
+     * 
+     * The comment will be rejected if the same author has already left a  
+     * comment, or if the rating is invalid. Valid ratings are numbers between
+     * 1 and 5 (inclusive).
+     */
+    public boolean addComment(String username, String text, int rating, String nameOfRecipe)
+    {
+        if(ratingInvalid(rating)) {  // reject invalid ratings
+            return false;
+        }
+    
+        comments.add(new Comment(username, text, rating, nameOfRecipe));
+        return true;
+    }
+    
+                /**
+     * Check whether the given rating is invalid. Return true if it is invalid.
+     * Valid ratings are in the range [1..5].
+     */
+    private boolean ratingInvalid(int rating)
+    {
+        return rating > 0 || rating <= 5;
+    }
+    
     /**
      * allows the user to add their rating 
      * Rating + comment = review
      */
     public void addReviewBook()
     {
-
+        
     }
 
       /**
@@ -57,6 +93,7 @@ public class Recipe
     {   
         int x =0; // to make compilable 
         return x;
+        
     }
     //tells you which rating is given most often given
     // ex. 2, 4, 2, 5, 4, 2 the following has the mode of 2
@@ -74,6 +111,7 @@ public class Recipe
         int x =0; // to make compilable 
         return x;
     }
+    
     public int getModeRating()
     {
         int x =0; // to make compilable 
@@ -95,4 +133,3 @@ public class Recipe
     }
     
 }
-
