@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Write a description of class Snacks here.
  *
- * @author (your name)
+ * @author (Richard)
  * @version (a version number or a date)
  */
 public class Snacks extends Recipe

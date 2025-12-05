@@ -2,7 +2,7 @@
 /**
  * Write a description of class Drinks here.
  *
- * @author (your name)
+ * @author (Richard)
  * @version (a version number or a date)
  */
 public class Drinks extends Recipe

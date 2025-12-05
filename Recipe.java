@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Write a description of class Recipe here.
  *
- * @author (your name)
+ * @author (Richard)
  * @version (a version number or a date)
  */
 public class Recipe
