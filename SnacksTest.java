@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class SnacksTest.
  *
- * @author  (your name)
+ * @author  (Daksh)
  * @version (a version number or a date)
  */
 public class SnacksTest

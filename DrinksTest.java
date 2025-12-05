@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class DrinksTest.
  *
- * @author  (Richard)
+ * @author  (Daksh)
  * @version (a version number or a date)
  */
 public class DrinksTest

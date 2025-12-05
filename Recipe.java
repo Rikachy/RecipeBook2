@@ -26,18 +26,17 @@ public class Recipe
         
         
     }
-
+    
+   
     /**
      * allows the user to add their rating 
+     * Rating + comment = review
      */
-    public void addRating()
+    public void addReviewBook()
     {
-        
+
     }
-    public void addComments()
-    {
-        
-    }
+
       /**
      * //gets all rating and find the mean(average) 
      */
