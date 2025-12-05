@@ -7,10 +7,10 @@ import java.util.ArrayList;
  */
 public class RecipeBook
 {
-    private String title;
-    private String author;
-    private String edition;
-    private String publicationDate;
+    private String title = "getting cooked";
+    private String author = "Rich Dax";
+    private String edition = "67th";
+    private String publicationDate = "04,01,67";
     private int pageNumber;
     private ArrayList<Recipe> recipes;
     private ArrayList<Tags> tags;
@@ -19,12 +19,15 @@ public class RecipeBook
     */
     public RecipeBook()
     {
-           
+        System.out.println(title);
+        System.out.println("by " + author);
+        System.out.println(edition + "edition");
+        System.out.println("published" + publicationDate );
     }
     
     public void printBookDetails()
     {
-        //Give a brief description of what the book contains, prints the fields title, author, edition, publicationDate,     
+         
     }
     
     public void listAllRecipes()

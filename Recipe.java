@@ -53,9 +53,8 @@ public class Recipe
         int x =0; // to make compilable 
         return x;
     }
-
-    public int getAverageRating()
     
+    public int getAverageRating()
     {   
         int x =0; // to make compilable 
         return x;

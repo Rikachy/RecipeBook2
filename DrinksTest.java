@@ -39,4 +39,12 @@ public class DrinksTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void HotTest()
+    {
+        Drinks drinks1 = new Drinks();
+        assertEquals(true, drinks1.hotOrCold());
+    }
 }
+

@@ -39,4 +39,12 @@ public class SnacksTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void TestGuac()
+    {
+        Snacks snacks1 = new Snacks();
+        assertEquals(false, snacks1.checkIfGuacamoly());
+    }
 }
+

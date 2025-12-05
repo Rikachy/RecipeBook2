@@ -1,10 +1,8 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 /**
  * The test class RecipeTest.
  *
@@ -39,4 +37,20 @@ public class RecipeTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void TestGetMode()
+    {
+        Recipe recipe1 = new Recipe();
+        assertEquals(0, recipe1.getAverageRating());
+    }
+
+    @Test
+    public void getAverageRating()
+    {
+        Recipe recipe1 = new Recipe();
+        assertEquals(0, recipe1.getAverageRating());
+    }
 }
+
+
