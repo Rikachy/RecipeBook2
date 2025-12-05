@@ -2,7 +2,7 @@
 /**
  * Write a description of class Desserts here.
  *
- * @author (Daksh)
+ * @author (Daksh Balram)
  * @version (a version number or a date)
  */
 public class Desserts extends Recipe

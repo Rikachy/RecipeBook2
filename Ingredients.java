@@ -3,7 +3,7 @@ import java.util.HashSet;
 /**
  * Write a description of class Ingredients here.
  *
- * @author (your name)
+ * @author (Daksh Balram)
  * @version (a version number or a date)
  */
 public class Ingredients

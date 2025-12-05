@@ -2,12 +2,11 @@ import java.util.ArrayList;
 /**
  * Write a description of class RecipeBook here.
  *
- * @author (your name)
+ * @author (Daksh Balram)
  * @version (a version number or a date)
  */
 public class RecipeBook
 {
-    // instance variables - replace the example below with your own
     private String title;
     private String author;
     private String edition;
