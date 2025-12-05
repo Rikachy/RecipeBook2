@@ -19,34 +19,63 @@ public class RecipeBook
     */
     public RecipeBook()
     {
-        System.out.println(title);
-        System.out.println("by " + author);
-        System.out.println(edition + "edition");
-        System.out.println("published" + publicationDate );
+
     }
     
     public void printBookDetails()
     {
-         
+        System.out.println("-------- " + title + " --------");
+        System.out.println("  ------  " + "by " + author + "   ------  ");
+        System.out.println(edition + "edition");
+        System.out.println("published" + publicationDate);
+        System.out.println();     
     }
     
     public void listAllRecipes()
     {
-        //for loop to print the collection of all the recipes
+        for(int i = 0; i > recipes.size(); i++)
+        {
+            recipes.get(i);
+            System.out.println(i);
+        }
     }
     
     public void listByType()
     {
-        //for loop to print colletion of all the tags 
+        for(int i = 0; i > tags.size(); i++)
+        {
+            tags.get(i);
+            System.out.println(i);
+        }
     }
     
     public void searchByTags(Tags tag)
     {
+        int i = 0;
+        while(i > tags.size())
+        {
+            if(tags.contains(tag))
+            {
+                //to be continued    
+            }
+            i++;
+        }
         //while loop to iterate through the tags collection and return all the recipes related to that tag 
     }
     
     public void searchSpecificRecipe(String recipe)
     {
+        int i = 0;
+        while(i > recipes.size())
+        {
+            if(recipes.contains(recipe))
+            {
+                System.out.println(recipe);
+            } else {
+                System.out.println("not a recipe");
+            }
+            i++;
+        }
         /*while loop to iterate through the recipe collection and check if there is the recipe entered in the parameter
          * if recipes contains recipe return recipe
          * else print ("not a recipe")
@@ -62,6 +91,7 @@ public class RecipeBook
     
     public void printRecipeDetails(String recipe)
     {
+        
         //gets the recipe and prints the description field from the Recipe.Class       
     }
     
