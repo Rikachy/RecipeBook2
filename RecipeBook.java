@@ -19,7 +19,8 @@ public class RecipeBook
     */
     public RecipeBook()
     {
-
+        recipes = new ArrayList<>();
+        tags = new ArrayList<>();
     }
     
     public void printBookDetails()
@@ -33,49 +34,43 @@ public class RecipeBook
     
     public void listAllRecipes()
     {
-        for(int i = 0; i > recipes.size(); i++)
+        for(int i = 0; i < recipes.size(); i++)
         {
-            recipes.get(i);
-            System.out.println(i);
+            System.out.println(recipes.get(i));
         }
     }
     
     public void listByType()
     {
-        for(int i = 0; i > tags.size(); i++)
+        for(int i = 0; i < tags.size(); i++)
         {
-            tags.get(i);
-            System.out.println(i);
+            System.out.println(tags.get(i));
         }
     }
     
     public void searchByTags(Tags tag)
     {
-        int i = 0;
-        while(i > tags.size())
+        for (Recipe recipe : recipes)
         {
-            if(tags.contains(tag))
-            {
-                //to be continued    
-            }
-            i++;
-        }
-        //while loop to iterate through the tags collection and return all the recipes related to that tag 
-    }
-    
-    public void searchSpecificRecipe(String recipe)
-    {
-        int i = 0;
-        while(i > recipes.size())
-        {
-            if(recipes.contains(recipe))
+            if(recipe.getTags().contains(tag))
             {
                 System.out.println(recipe);
-            } else {
-                System.out.println("not a recipe");
             }
-            i++;
         }
+        
+        //for loop to iterate through the tags collection and return all the recipes related to that tag 
+    }
+    
+    public void searchSpecificRecipe(String recipeName)
+    {
+        for (Recipe recip : recipes)
+        {
+            if(recip.getName().equals(recipeName))
+            {
+                System.out.println(recip);
+            }
+        }
+        System.out.println("not a recipe");
         /*while loop to iterate through the recipe collection and check if there is the recipe entered in the parameter
          * if recipes contains recipe return recipe
          * else print ("not a recipe")
@@ -84,19 +79,33 @@ public class RecipeBook
     
     public void searchByIngredient(String ingredient)
     {
+        for (Recipe r : recipes)
+        {
+            if(r.getIngredients().contains(ingredient))
+            {
+                System.out.println(r);
+            }
+        }
         /*for each loop to iterate through recipe collection and 
          * if it contains the ingredient return all recipes containing that ingredient.
          */            
     }
     
-    public void printRecipeDetails(String recipe)
+    public void printRecipeDetails(String recipeName)
     {
-        
+         for (Recipe r : recipes)
+        {
+            if (r.getName().equalsIgnoreCase(recipeName))
+            {
+                System.out.println(r.getDescription());
+            }
+        }
         //gets the recipe and prints the description field from the Recipe.Class       
     }
     
     public void listTopRatedRecipe()
     {
+        
         //while loop to go through the ratings and compare them and return the highest rated one        
     }
     
