@@ -23,43 +23,44 @@ public class Desserts extends Recipe
 
     public boolean checkBaked()
     {
+        if(isBaked)
+        {
+            System.out.println("this is a baked dessert");
+            return true;
+        } else {
+            System.out.println("This is not a baked dessert");
+            return false;
+        }
         /*if(this.isBaked) -> print("this is a baked recipe") return true
          * else return false
          */
-        return isBaked;
     }
     
-    public String getTexture()
+    public void setTexture(String texture)
     {
         ArrayList<String> possibleTextures = new ArrayList<>();
         possibleTextures.add("soft");
         possibleTextures.add("solid");
         possibleTextures.add("Crispy");
         possibleTextures.add("Crunchy");
-        possibleTextures.add("Creamy");
-        Scanner sc = new Scanner(System.in);
+        possibleTextures.add("Creamy");   
         
-        System.out.print("Please choose one of th following texture  : " + possibleTextures );
-        String texture = sc.nextLine();
-        
-        for(String check : possibleTextures){
-            if(texture.equals(check)){
-                System.out.print("added " + texture);
-            }else{
-                System.out.print(texture + " is an invalid texture");
-                return null;
-            }
-                  
+        if(possibleTextures.contains(texture))
+        {
+            this.texture = texture;
+        } else {
+            System.out.println(texture + " is not a valid texture");
         }
-        
+    }
+    
+    public String getTexture()
+    {
         return texture;  
-        //implement a list of choices as arrayList so user doesn't input something random
     }
     
     public String getSweetLevel()
-    {
+    {   
         return sweetLevel;
-        //implement a list of choices as arrayList so user doesn't input something random
     }
     
     public boolean isGlutenFree()
