@@ -10,7 +10,7 @@ public class RecipeBook
     private String title = "getting cooked";
     private String author = "Rich Dax";
     private String edition = "67th";
-    private String publicationDate = "04,01,67";
+    private String publicationDate = "04/01/67";
     private int pageNumber;
     private ArrayList<Recipe> recipes;
     // moved to Recipe private ArrayList<Tags> tags;
@@ -25,16 +25,18 @@ public class RecipeBook
     
     public void printBookDetails()
     {
-        System.out.println("-------- " + title + " --------");
-        System.out.println("  ------  " + "by " + author + "   ------  ");
-        System.out.println("  ------  " + edition + " edition" + "   ------  ");
-        System.out.println("published" + publicationDate);
-        System.out.println();     
+        System.out.println("====================================");
+        System.out.println("           " + title);
+        System.out.println("====================================");
+        System.out.println("Author      : " + author);
+        System.out.println("Edition     : " + edition + " edition");
+        System.out.println("Published   : " + publicationDate);
+        System.out.println("====================================");
     }
     
-    public void listAllRecipes()
+        public void listAllRecipes()
     {
-        for(int i = 0; i < recipes.size(); i++)
+            for(int i = 0; i < recipes.size(); i++)
         {
             System.out.println(recipes.get(i));
         }
