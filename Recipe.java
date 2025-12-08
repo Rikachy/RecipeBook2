@@ -17,7 +17,9 @@ public class Recipe
     protected double prepTime;
     protected ArrayList<Integer> ratings;
     protected String description;
+    private ArrayList<Tags> tags;
     
+    private String name;
     
     private ArrayList<Comment> comments;
     private int rating; 
@@ -27,6 +29,10 @@ public class Recipe
     public Recipe()
     {
         comments = new ArrayList<>();
+        steps = new ArrayList<>();
+        ratings = new ArrayList<>();
+        ingredients = new HashSet<>();
+        tags = new ArrayList<>();
     }
     
         /**
@@ -61,7 +67,7 @@ public class Recipe
      */
     private boolean ratingInvalid(int rating)
     {
-        return rating > 0 || rating <= 5;
+        return rating < 0 || rating > 5;
     }
     
     /**
@@ -118,7 +124,7 @@ public class Recipe
         return x;
     }
     // returns a HashSet and not double
-    public HashSet<Integer> scaleRecipe(double scaler){
+    public ArrayList<Integer> scaleRecipe(double scaler){
         /* adjusting the quantity of the ingredients with the scaler input.
          * important to put restriction so you don't go below 0 or in negatives
          * 
@@ -128,8 +134,40 @@ public class Recipe
          * Storing the new values into a local variable HashSet
          * retur the new HashSet
          */
-        HashSet<Integer> adjusted = new HashSet<>(); // to make compilable 
+        ArrayList<Integer> adjusted = new ArrayList<>(); // to make compilable 
         return adjusted;
     }
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public ArrayList<String> getSteps()
+    {
+        return steps; 
+    }
+    
+    public String getDescription()
+    {
+        return description;
+    }
+    
+    public double getPrepTime() 
+    {
+        return prepTime;
+    }
+    
+    public ArrayList<Tags> getTags()
+    {
+        return tags;
+    }
+    
+    public HashSet<Ingredients> getIngredients()
+    {
+        return ingredients;
+    }
+
+    
     
 }

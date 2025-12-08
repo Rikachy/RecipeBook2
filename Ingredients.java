@@ -12,23 +12,16 @@ public class Ingredients
     private double amount;
     private String name;
     private UnitOfMeasurement unit;
-    private HashSet<String>ingredients;
+    //private HashSet<String>ingredients;
 
     /**
      * Constructor for objects of class Ingredients
      */
-    public Ingredients()
+    public Ingredients(String name, UnitOfMeasurement unit, double amount)
     {
-        ingredients = new HashSet<>();
-        ingredients.add("tomato");ingredients.add("milk");ingredients.add("Banana");
-        ingredients.add("egg");ingredients.add("Potatoes");ingredients.add("Honey");
-        ingredients.add("salt");ingredients.add("Carrots");ingredients.add("Cinnamon");
-        ingredients.add("butter");ingredients.add("Lemon");ingredients.add("Cheese");
-        ingredients.add("garlic");ingredients.add("Vinegar");ingredients.add("Lettuce");
-        ingredients.add("onion");ingredients.add("Mushrooms");ingredients.add("Shrimp");
-        ingredients.add("olive oil");ingredients.add("peppe");ingredients.add("Eggplant");
-        ingredients.add("flour");ingredients.add("picktoes");ingredients.add("nut");
-        ingredients.add("sugar");ingredients.add("Beans");ingredients.add("lime");
+        this.name = name;
+        this.unit = unit;
+        this.amount = amount;
         
     }
     

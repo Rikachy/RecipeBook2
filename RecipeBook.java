@@ -13,14 +13,14 @@ public class RecipeBook
     private String publicationDate = "04,01,67";
     private int pageNumber;
     private ArrayList<Recipe> recipes;
-    private ArrayList<Tags> tags;
+    // moved to Recipe private ArrayList<Tags> tags;
     /**
     * Constructor for objects of class RecipeBook
     */
     public RecipeBook()
     {
+        
         recipes = new ArrayList<>();
-        tags = new ArrayList<>();
     }
     
     public void printBookDetails()
@@ -39,7 +39,7 @@ public class RecipeBook
             System.out.println(recipes.get(i));
         }
     }
-    
+    /*
     public void listByType()
     {
         for(int i = 0; i < tags.size(); i++)
@@ -47,7 +47,7 @@ public class RecipeBook
             System.out.println(tags.get(i));
         }
     }
-    
+    */
     public void searchByTags(Tags tag)
     {
         for (Recipe recipe : recipes)
@@ -113,4 +113,6 @@ public class RecipeBook
     {
         //get prompts from the the scanner to add the ingredients, steps and preptime    
     }
+    
+    
 }
