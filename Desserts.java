@@ -16,21 +16,18 @@ public class Desserts extends Recipe
     /**
      * Constructor for objects of class Desserts
      */
-    public Desserts()
+    public Desserts(String name, boolean isBaked, String texture, String sweetLevel)
     {
-        
+        super(name);
+        this.isBaked = isBaked;
+        this.texture = texture;
+        this.sweetLevel = sweetLevel;
     }
 
     public boolean checkBaked()
     {
-        if(isBaked)
-        {
-            System.out.println("this is a baked dessert");
-            return true;
-        } else {
-            System.out.println("This is not a baked dessert");
-            return false;
-        }
+        System.out.println(isBaked ? "This is a baked recipe" : "This is not a baked recipe");
+        return isBaked;
         /*if(this.isBaked) -> print("this is a baked recipe") return true
          * else return false
          */
@@ -38,18 +35,10 @@ public class Desserts extends Recipe
     
     public void setTexture(String texture)
     {
-        ArrayList<String> possibleTextures = new ArrayList<>();
-        possibleTextures.add("soft");
-        possibleTextures.add("solid");
-        possibleTextures.add("Crispy");
-        possibleTextures.add("Crunchy");
-        possibleTextures.add("Creamy");   
-        
-        if(possibleTextures.contains(texture))
+        switch(texture)
         {
-            this.texture = texture;
-        } else {
-            System.out.println(texture + " is not a valid texture");
+            case "soft", "solid", "crispy", "crunchy", "creamy" -> this.texture = texture;
+            default -> this.texture = "unknown";
         }
     }
     
@@ -59,7 +48,7 @@ public class Desserts extends Recipe
     }
     
     public String getSweetLevel()
-    {   
+    {  
         return sweetLevel;
     }
     
