@@ -63,14 +63,19 @@ public class RecipeBook
     
     public void searchSpecificRecipe(String recipeName)
     {
+        boolean found = false;
         for (Recipe recip : recipes)
         {
             if(recip.getName().equals(recipeName))
             {
-                System.out.println(recip);
+                System.out.println(recip.getDescription());
+                found = true;
             }
         }
-        System.out.println("not a recipe");
+        if(!found)
+        {
+            System.out.println("not a recipe");    
+        }
         /*while loop to iterate through the recipe collection and check if there is the recipe entered in the parameter
          * if recipes contains recipe return recipe
          * else print ("not a recipe")
