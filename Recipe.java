@@ -26,15 +26,22 @@ public class Recipe
     /**
      * Constructor for objects of class Recipe
      */
-    public Recipe()
+    public Recipe(String name)
     {
-        comments = new ArrayList<>();
-        steps = new ArrayList<>();
-        ratings = new ArrayList<>();
-        ingredients = new HashSet<>();
+        this.name = name;
+        this.comments = new ArrayList<>();
+        this.steps = new ArrayList<>();
+        this.ratings = new ArrayList<>();
+        this.ingredients = new HashSet<>();
+        
         tags = new ArrayList<>();
+    
     }
     
+    public void addIngredientEntry(String name, double amount, UnitOfMeasurement unit)
+    {
+        ingredients.add(new Ingredients(name, unit, amount));
+    }
         /**
      * Return the number of customer comments for this item.
      */

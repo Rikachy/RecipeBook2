@@ -1,12 +1,16 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
 
-PROJECT TITLE:
+PROJECT TITLE: Getting Cooked
+
 PURPOSE OF PROJECT:
+This project serves as a primitve recipebook. 
+
 VERSION or DATE:
+
 HOW TO START THIS PROJECT:
-AUTHORS:
+To run the project, user must have Java downloaded in their personal computer. 
+For more optimal use, downloading BlueJ is highly recommanded.
+
+AUTHORS: Daksh Balram, Richard Qing 
+
 USER INSTRUCTIONS:
+
