@@ -27,7 +27,7 @@ public class Ingredients
     
     public void scaleAmount(double scale)
     {
-        double newAmount = amount * scale;
+        amount *= scale;
     }
     
     public double getAmount()
@@ -45,12 +45,22 @@ public class Ingredients
         return name;    
     }
     
-    public void listAllIngredients()
-    {
+    /*
+     * {
         for(int i = 0; i > ingredients.size(); i++)
         {
             System.out.println(ingredients);  
         }
         //for each loop to print all ingredients in the set
+    }
+     * 
+     */public void listAllIngredients()
+    {
+        
+    }
+    
+    public String toString()
+    {
+        return amount + " " + unit + " of " + name;
     }
 }
