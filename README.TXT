@@ -2,11 +2,10 @@
 PROJECT TITLE: Getting Cooked
 
 PURPOSE OF PROJECT:
--This project serves as a primitve recipebook. This recipebook stores 3 main
-types of recipes : snacks, drinks, desserts. 
--You are able to search recipes from their ingredients name and their tags. 
--The user is also able to add comments to the recipebook
-(we aren't able to associate comments to recipes).  
+It is an object-oriented Java program that models a recipe system.
+You have a RecipeBook, Recipe, Ingredients, unitOfMeasurement classes. 2 Enums
+and 3 subclasses, snacks, desserts, drinks. You are able to store recipes and 
+organize them. The user is able to add view ingredients and recipe details. 
 
 VERSION or DATE: 
 Version 1.0
