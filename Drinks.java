@@ -48,10 +48,10 @@ public class Drinks extends Recipe
         if(this.IsHot) -> systm. prints("it is a hot drink...")  return true 
         else (drink is cold) syst. prints("it is a cold drink...") return false 
         */
-        if (isHot = true){
+        if (isHot == true){
            System.out.println("Drink is hot");
         }
-        if (isHot = false){
+        if (isHot == false){
            System.out.println("Drink is cold");
         }
         return isHot;  

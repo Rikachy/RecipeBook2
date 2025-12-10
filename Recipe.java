@@ -65,6 +65,7 @@ public class Recipe
         }
     
         comments.add(new Comment(username, text, rating, nameOfRecipe));
+        ratings.add(rating);
         return true;
     }
     
@@ -216,11 +217,6 @@ public class Recipe
     public HashSet<Ingredients> getIngredients()
     {
         return ingredients;
-    }
-
-    @Override 
-    public String toString(){
-        return "the average rating for "+ name +" is " + calcAverageRating(); 
     }
     
 }

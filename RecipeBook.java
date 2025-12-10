@@ -14,6 +14,8 @@ public class RecipeBook
     private int pageNumber;
     private ArrayList<Recipe> recipes;
     private ArrayList<Tags> tags;
+    
+    
     /**
     * Constructor for objects of class RecipeBook
     */
@@ -125,5 +127,44 @@ public class RecipeBook
         //get prompts from the the scanner to add the ingredients, steps and preptime    
     }
     
+    public void addCommentToRecipe(String recipeName, String username, String text, int rating) {
+        for (Recipe r : recipes) {
+            if (r.getName().equalsIgnoreCase(recipeName)) {
+                r.addComment(username, text, rating, recipeName);
+                System.out.println("Comment added");
+                return;
+            }
+        }
+        System.out.println("Recipe not found");
+    }
     
+    public double getAverageRating(String recipeName) {
+        for (Recipe r : recipes) {
+            if (r.getName().equalsIgnoreCase(recipeName)) {
+                return r.calcAverageRating(); 
+            }
+        }
+        System.out.println("Recipe not found");
+        return 0.0;
+    }
+    
+     public int getModeRating(String recipeName) {
+        for (Recipe r : recipes) {
+            if (r.getName().equalsIgnoreCase(recipeName)) {
+                return r.getModeRating(); 
+            }
+        }
+        System.out.println("Recipe not found");
+        return 0; 
+    } 
+    public void addStepToRecipe(String recipeName, String step) {
+        for (Recipe r : recipes) {
+            if (r.getName().equalsIgnoreCase(recipeName)) {
+                r.addStep(step);  
+                System.out.println("Step added");
+                return;
+            }
+        }
+        System.out.println("Recipe not found");
+    }
 }

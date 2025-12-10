@@ -38,7 +38,7 @@ public class Snacks extends Recipe
             System.out.print("Has guacamole.");
             return true;
         }
-        System.out.print("Has guacamole.");
+        System.out.print("Does not have guacamole.");
         return false;
     }
     
