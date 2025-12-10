@@ -28,6 +28,9 @@ public class RecipeBook
         cake.addIngredient("flour", 2, UnitOfMeasurement.CUP);
         cake.addIngredient("sugar", 1.5, UnitOfMeasurement.CUP);
         cake.addIngredient("chocolate", 1, UnitOfMeasurement.CUP);
+        cake.addStep("Mix dry ingredients");
+        cake.addStep("Add chocolate and eggs");
+        cake.addStep("Bake for 30 minutes");
         recipes.add(cake);
         tags.add(Tags.GLUTEN);
     }
@@ -60,7 +63,6 @@ public class RecipeBook
                 System.out.println(recipe);
             }
         }
-        
         //for loop to iterate through the tags collection and return all the recipes related to that tag 
     }
     
@@ -157,6 +159,7 @@ public class RecipeBook
         System.out.println("Recipe not found");
         return 0; 
     } 
+    
     public void addStepToRecipe(String recipeName, String step) {
         for (Recipe r : recipes) {
             if (r.getName().equalsIgnoreCase(recipeName)) {
@@ -166,5 +169,13 @@ public class RecipeBook
             }
         }
         System.out.println("Recipe not found");
+    }
+    
+    public static void RecipeBook(String[] args)
+    {
+        RecipeBook recipeBook = new RecipeBook();
+        recipeBook.printBookDetails();
+        
+        System.out.print("this");
     }
 }
