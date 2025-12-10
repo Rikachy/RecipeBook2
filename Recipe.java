@@ -1,8 +1,6 @@
 
 import java.util.ArrayList;
-import java.util.Scanner; 
 import java.util.HashSet;
-import java.util.List;
 /**
  * Write a description of class Recipe here.
  *
@@ -23,6 +21,8 @@ public class Recipe
     
     private ArrayList<Comment> comments;
     private int rating; 
+    
+    
     /**
      * Constructor for objects of class Recipe
      */
@@ -89,7 +89,7 @@ public class Recipe
       /**
      * //gets all rating and find the mean(average) 
      */
-    public int calcAverageRating()
+    public double calcAverageRating()
     {
         
         /*select a specific recipe and check if it has any comments/review
@@ -98,8 +98,18 @@ public class Recipe
          * store that value into a variable
          * return said variable
         */
-        int x =0; // to make compilable 
-        return x;
+        if (ratings == null)
+        {
+            System.out.print("There is currently no rating.");
+            return 0.0;
+        }
+        double sum = 0.0;
+        for (int rating : ratings)
+        {
+            sum = sum + rating;
+        }
+        
+        return sum / ratings.size();
     }
     
     public int getAverageRating()
@@ -110,7 +120,7 @@ public class Recipe
     }
     //tells you which rating is given most often given
     // ex. 2, 4, 2, 5, 4, 2 the following has the mode of 2
-    public int calcModeRating()
+    public int getModeRating()
     {
         /*goes through all of the rating with iterator or for loop
          * everytime 1 is spotted add 1 to a
@@ -121,17 +131,55 @@ public class Recipe
          * compare a,b,c,d,e and return the largest digit
          */
         
-        int x =0; // to make compilable 
-        return x;
+        int a = 0;// count of 1
+        int b = 0; // count of 2
+        int c = 0; // count of 3
+        int d = 0; // count of 4
+        int e = 0; // count of 5
+        int max = a;
+        int mode = 1;
+                for (int rating : ratings) {
+            switch (rating) {
+                case 1: a++; 
+                break;
+                case 2: b++; 
+                break;
+                case 3: c++; 
+                break;
+                case 4: d++; 
+                break;
+                case 5: e++; 
+                break;
+            }
+        }
+        if (b > max) 
+        { 
+            max = b; 
+            mode = 2;
+        }
+            
+        if (c > max) 
+        { 
+            max = c; 
+            mode = 3; 
+        }
+        if (d > max) 
+        { 
+            max = d;
+            mode = 4; 
+        }
+        if (e > max) 
+        { 
+            max = e; 
+            mode = 5; 
+        }
+        
+        return mode; 
     }
     
-    public int getModeRating()
-    {
-        int x =0; // to make compilable 
-        return x;
-    }
+
     // returns a HashSet and not double
-    public ArrayList<Integer> scaleRecipe(double scaler){
+    public HashSet<Ingredients> scaleRecipe(double scaler){
         /* adjusting the quantity of the ingredients with the scaler input.
          * important to put restriction so you don't go below 0 or in negatives
          * 
@@ -141,8 +189,12 @@ public class Recipe
          * Storing the new values into a local variable HashSet
          * retur the new HashSet
          */
-        ArrayList<Integer> adjusted = new ArrayList<>(); // to make compilable 
-        return adjusted;
+        HashSet<Ingredients> scaledIngredients = new HashSet<>();
+        for (Ingredients ing : ingredients) {
+            Ingredients updated = new Ingredients(ing.getName(), ing.getAmount() * scaler, UnitOfMeasurement.CUP);
+            scaledIngredients.add(updated);
+        }
+        return scaledIngredients;
     }
     
     public String getName()

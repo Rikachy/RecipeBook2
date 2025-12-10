@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 /**
  * Write a description of class Snacks here.
  *
@@ -16,29 +16,30 @@ public class Snacks extends Recipe
     /**
      * Constructor for objects of class Snacks
      */
-    public Snacks()
+    public Snacks(boolean schoolAppropriate,  String name )
     {
-       
+     super (name);
+     this.schoolAppropriate = schoolAppropriate;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
+
     //a meme method 
     public boolean checkIfGuacamoly()
     {
-        /*Goes trough the list of ingreidents needed for the snacks
+        /*Goes trough the list of ingredients needed for the snacks
          * if one of those elements isequals guacamoly
          * return true 
          * systm prints("has guac...")
          * else return false
          * syst prints ("this snack does now have guac")
          */
-        boolean guac = false;
-        return guac;
+        for (Ingredients checkGuac : ingredients){
+            if(checkGuac.getName().equals("guacamole"))
+            System.out.print("Has guacamole.");
+            return true;
+        }
+        System.out.print("Has guacamole.");
+        return false;
     }
     
     /* method used to be called containsNumIngredients
@@ -53,4 +54,25 @@ public class Snacks extends Recipe
          */
         return ingredients.size(); 
     }
+    
+    public boolean isSchoolAppropriate()
+    {
+        return schoolAppropriate;
+    }
+    
+    public void setPerishabilityLevel()
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("How perishable is your snack : high, medium, low");
+        perishability = sc.nextLine();
+        
+        
+    }
+    
+    public String getPerishabilityLevel()
+    {
+        return perishability;
+    }
+        
 }
