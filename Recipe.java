@@ -38,9 +38,9 @@ public class Recipe
     
     }
     
-    public void addIngredientEntry(String name, double amount, UnitOfMeasurement unit)
+    public void addIngredient(String name, double amount, UnitOfMeasurement unit)
     {
-        ingredients.add(new Ingredients(name, unit, amount));
+        ingredients.add(new Ingredients(name, amount, unit));
     }
         /**
      * Return the number of customer comments for this item.

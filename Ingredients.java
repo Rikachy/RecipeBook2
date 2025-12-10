@@ -12,12 +12,11 @@ public class Ingredients
     private double amount;
     private String name;
     private UnitOfMeasurement unit;
-    //private HashSet<String>ingredients;
 
     /**
      * Constructor for objects of class Ingredients
      */
-    public Ingredients(String name, UnitOfMeasurement unit, double amount)
+    public Ingredients(String name, double amount, UnitOfMeasurement unit)
     {
         this.name = name;
         this.unit = unit;
@@ -43,20 +42,6 @@ public class Ingredients
     public String getName()
     {
         return name;    
-    }
-    
-    /*
-     * {
-        for(int i = 0; i > ingredients.size(); i++)
-        {
-            System.out.println(ingredients);  
-        }
-        //for each loop to print all ingredients in the set
-    }
-     * 
-     */public void listAllIngredients()
-    {
-        
     }
     
     public String toString()

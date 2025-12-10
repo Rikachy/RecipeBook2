@@ -13,14 +13,21 @@ public class RecipeBook
     private String publicationDate = "04/01/67";
     private int pageNumber;
     private ArrayList<Recipe> recipes;
-    // moved to Recipe private ArrayList<Tags> tags;
+    private ArrayList<Tags> tags;
     /**
     * Constructor for objects of class RecipeBook
     */
     public RecipeBook()
     {
-        
         recipes = new ArrayList<>();
+        tags = new ArrayList<>();
+        
+        Desserts cake = new Desserts("Chocolate Cake", true, "Soft", "High");
+        cake.addIngredient("flour", 2, UnitOfMeasurement.CUP);
+        cake.addIngredient("sugar", 1.5, UnitOfMeasurement.CUP);
+        cake.addIngredient("chocolate", 1, UnitOfMeasurement.CUP);
+        recipes.add(cake);
+        tags.add(Tags.GLUTEN);
     }
     
     public void printBookDetails()
@@ -41,15 +48,7 @@ public class RecipeBook
             System.out.println(recipes.get(i));
         }
     }
-    /*
-    public void listByType()
-    {
-        for(int i = 0; i < tags.size(); i++)
-        {
-            System.out.println(tags.get(i));
-        }
-    }
-    */
+    
     public void searchByTags(Tags tag)
     {
         for (Recipe recipe : recipes)
@@ -70,6 +69,7 @@ public class RecipeBook
         {
             if(recip.getName().equals(recipeName))
             {
+                System.out.println(recip.getName());
                 System.out.println(recip.getDescription());
                 found = true;
             }
@@ -78,6 +78,7 @@ public class RecipeBook
         {
             System.out.println("not a recipe");    
         }
+        
         /*while loop to iterate through the recipe collection and check if there is the recipe entered in the parameter
          * if recipes contains recipe return recipe
          * else print ("not a recipe")
@@ -88,9 +89,12 @@ public class RecipeBook
     {
         for (Recipe r : recipes)
         {
-            if(r.getIngredients().contains(ingredient))
+            for(Ingredients ing : r.getIngredients())
             {
-                System.out.println(r);
+                if(ing.getName().equals(ingredient))
+                {
+                    System.out.println(r);
+                }   
             }
         }
         /*for each loop to iterate through recipe collection and 
