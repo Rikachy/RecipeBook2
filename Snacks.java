@@ -35,12 +35,14 @@ public class Snacks extends Recipe
          */
         for (Ingredients checkGuac : ingredients){
             if(checkGuac.getName().equals("guacamole"))
-            System.out.print("Has guacamole.");
-            return true;
-        }
+            {
+                System.out.print("Has guacamole.");
+                return true;
+            }
+        }    
         System.out.print("Does not have guacamole.");
         return false;
-    }
+    } 
     
     /* method used to be called containsNumIngredients
      *normally a snack is meant to be small, so this method help determines

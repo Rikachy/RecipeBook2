@@ -176,6 +176,12 @@ public class RecipeBook
         RecipeBook recipeBook = new RecipeBook();
         recipeBook.printBookDetails();
         
-        System.out.print("this");
+        System.out.println("This book contains the following recipes.");
+        recipeBook.listAllRecipes();
+        
+        
+        
+        
+        
     }
 }
