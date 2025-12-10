@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  * Write a description of class RecipeBook here.
  *
@@ -33,6 +34,12 @@ public class RecipeBook
         cake.addStep("Bake for 30 minutes");
         recipes.add(cake);
         tags.add(Tags.GLUTEN);
+        
+        Desserts pie = new Desserts("Apple pie", true, "flaky", "Medium");
+        pie.addIngredient("apples", 1, UnitOfMeasurement.UNIT);
+        pie.addIngredient("sugar", 1, UnitOfMeasurement.CUP);
+        pie.addIngredient("flour", 2.5, UnitOfMeasurement.TBSP);
+        pie.addIngredient("butter", 2, UnitOfMeasurement.TBSP);
     }
     
     public void printBookDetails()
@@ -173,15 +180,24 @@ public class RecipeBook
     
     public static void RecipeBook(String[] args)
     {
+        Scanner sc = new Scanner(System.in);
+        
         RecipeBook recipeBook = new RecipeBook();
         recipeBook.printBookDetails();
         
         System.out.println("This book contains the following recipes.");
         recipeBook.listAllRecipes();
         
+        System.out.print("choose a recipe");
         
         
+        //classic tom collins drink
+        //Hot chocolate
         
+        //sweet potatoes fries
+        //Cajun shrimp guacamole bites
+        
+        //apple pie
         
     }
 }
