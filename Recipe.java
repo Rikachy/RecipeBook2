@@ -68,6 +68,11 @@ public class Recipe
         return true;
     }
     
+    public void addStep(String step)
+    {
+        steps.add(step);
+    }
+    
                 /**
      * Check whether the given rating is invalid. Return true if it is invalid.
      * Valid ratings are in the range [1..5].
@@ -77,14 +82,6 @@ public class Recipe
         return rating < 0 || rating > 5;
     }
     
-    /**
-     * allows the user to add their rating 
-     * Rating + comment = review
-     */
-    public void addReviewBook()
-    {
-        
-    }
 
       /**
      * //gets all rating and find the mean(average) 
@@ -112,12 +109,6 @@ public class Recipe
         return sum / ratings.size();
     }
     
-    public int getAverageRating()
-    {   
-        int x =0; // to make compilable 
-        return x;
-        
-    }
     //tells you which rating is given most often given
     // ex. 2, 4, 2, 5, 4, 2 the following has the mode of 2
     public int getModeRating()
@@ -227,6 +218,9 @@ public class Recipe
         return ingredients;
     }
 
-    
+    @Override 
+    public String toString(){
+        return "the average rating for "+ name +" is " + calcAverageRating(); 
+    }
     
 }

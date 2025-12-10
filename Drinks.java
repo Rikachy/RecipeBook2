@@ -15,12 +15,12 @@ public class Drinks extends Recipe
     /**
      * Constructor for objects of class Drinks
      */
-    public Drinks(String sizeName, boolean isAlchoholic, boolean hasDairy, boolean isHot)
+    public Drinks(String name, boolean isAlchoholic, boolean hasDairy, boolean isHot)
     {
+        super (name); 
         this.isHot = isHot;
         this.isAlcholholic = isAlcholholic;
         this.hasDairy = hasDairy;
-        this.sizeName = sizeName;
     }
     
     public boolean containsAlchohol()
