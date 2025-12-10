@@ -18,4 +18,9 @@ For more optimal use, downloading BlueJ is highly recommanded.
 AUTHORS: Daksh Balram, Richard Qing 
 
 USER INSTRUCTIONS: 
-
+Open the program to create your Recipe Book.
+View all recipes or search for a specific recipe by name, ingredient, or tag.
+Add new steps, tags, or comments to any recipe.
+Check a recipe’s average rating or most frequent rating (mode).
+Scale ingredients if you want to change recipe portions.
+Print recipe details to see description, steps, ingredients, and comments.
