@@ -95,7 +95,7 @@ public class RecipeBook
         System.out.println("====================================");
     }
     
-        public void listAllRecipes()
+    public void listAllRecipes()
     {
             for(int i = 0; i < recipes.size(); i++)
         {
@@ -220,26 +220,54 @@ public class RecipeBook
         System.out.println("Recipe not found");
     }
     
-    public static void RecipeBook(String[] args)
+    public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
         
         RecipeBook recipeBook = new RecipeBook();
         recipeBook.printBookDetails();
         
-        System.out.println("This book contains the following recipes.");
-        recipeBook.listAllRecipes();
+        boolean running = true;
         
-        System.out.print("choose a recipe");
+        while(running)
+        {
+            System.out.println("Recipe book options");
+            System.out.println("1. List all recipes");
+            System.out.println("2. Search recipe by name");
+            System.out.println("3. Search recipes by ingredients");
+            System.out.println("4. Add comment to a recipe");
+            System.out.println("5. Ger average rating for a recipe");
+            System.out.println("6. Exit");
+            System.out.print("Choose an option: ");
+            
+            int choice = sc.nextInt();
+            sc.nextLine();
         
-        
-        //classic tom collins drink
-        //Hot chocolate
-        
-        //sweet potatoes fries
-        //Cajun shrimp guacamole bites
-        
-        //apple pie
-        
+            switch (choice)
+            {
+                case 1: recipeBook.listAllRecipes();
+                        break;
+                case 2: System.out.print("Enter a recipe name: ");
+                        String name = sc.nextLine();
+                        recipeBook.searchSpecificRecipe(name);
+                        break;
+                case 3: System.out.print("Enter ingredient name: ");
+                        String ingredient = sc.nextLine();
+                        recipeBook.searchByIngredient(ingredient);
+                        break;
+                case 4:
+                    
+                case 5: System.out.print("Enter recipe name: ");
+                        String recipe = sc.nextLine();
+                        System.out.println("average rating: " + recipeBook.getAverageRating(recipe));
+                        break;
+                case 6: System.out.print("bye bye!");
+                        running = false;
+                        break;
+                default: System.out.println("Invalid Option");
+                
+            }
+        }
+        sc.close();
     }
 }
