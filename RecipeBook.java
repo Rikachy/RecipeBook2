@@ -26,20 +26,62 @@ public class RecipeBook
         tags = new ArrayList<>();
         
         Desserts cake = new Desserts("Chocolate Cake", true, "Soft", "High");
-        cake.addIngredient("flour", 2, UnitOfMeasurement.CUP);
-        cake.addIngredient("sugar", 1.5, UnitOfMeasurement.CUP);
-        cake.addIngredient("chocolate", 1, UnitOfMeasurement.CUP);
+        cake.addIngredient("flour", 7/4, UnitOfMeasurement.CUP);
+        cake.addIngredient("sugar", 2, UnitOfMeasurement.CUP);
+        cake.addIngredient("cocoa powder", 3/4, UnitOfMeasurement.CUP);
+        cake.addIngredient("baking soda", 3/2, UnitOfMeasurement.TSP);
+        cake.addIngredient("baking powser", 3/2, UnitOfMeasurement.TSP);
+        cake.addIngredient("eggs", 2, UnitOfMeasurement.UNIT);
         cake.addStep("Mix dry ingredients");
-        cake.addStep("Add chocolate and eggs");
+        cake.addStep("Add eggs");
         cake.addStep("Bake for 30 minutes");
         recipes.add(cake);
         tags.add(Tags.GLUTEN);
         
         Desserts pie = new Desserts("Apple pie", true, "flaky", "Medium");
-        pie.addIngredient("apples", 1, UnitOfMeasurement.UNIT);
+        pie.addIngredient("apples", 7, UnitOfMeasurement.CUP);
         pie.addIngredient("sugar", 1, UnitOfMeasurement.CUP);
-        pie.addIngredient("flour", 2.5, UnitOfMeasurement.TBSP);
+        pie.addIngredient("flour", 3, UnitOfMeasurement.TBSP);
         pie.addIngredient("butter", 2, UnitOfMeasurement.TBSP);
+        pie.addIngredient("nutmeg", 1/8, UnitOfMeasurement.TBSP);
+        pie.addStep("Combine apples, suggar, flour and nutmeg");
+        pie.addStep("Dot with butter");
+        pie.addStep("bake until crust is golden(40 - 50 mins)");
+        recipes.add(pie);
+        
+        Snacks bananaBites = new Snacks(true, "Chocolate banana bites");
+        bananaBites.addIngredient("banana", 1, UnitOfMeasurement.UNIT);
+        bananaBites.addIngredient("chocolate chips", 2, UnitOfMeasurement.OUNCE);
+        bananaBites.addStep("peel the banana and and cut it into slices");
+        bananaBites.addStep("microwave the chocolate for 30s");
+        bananaBites.addStep("dip banana in chocolate then freeze");
+        recipes.add(bananaBites);
+        
+        Snacks toast = new Snacks(true, "Guacamole toast");
+        toast.addIngredient("avocado", 2, UnitOfMeasurement.UNIT);
+        toast.addIngredient("bread", 1, UnitOfMeasurement.UNIT);
+        toast.addStep("toast a slice of bread");
+        toast.addStep("mix avocados together to make guacamole");
+        toast.addStep("apply guacamole to the slice");
+        recipes.add(toast);
+        
+        Drinks milk = new Drinks("Chocolate milk", false, true, false);
+        milk.addIngredient("milk", 1, UnitOfMeasurement.CUP);
+        milk.addIngredient("chocolate powder", 2, UnitOfMeasurement.TBSP);
+        milk.addStep("pour the milk in to a glass");
+        milk.addStep("mix powder in milk");
+        milk.addStep("can warm up the milk before if you want it hot");
+        recipes.add(milk);
+        
+        Drinks margarita = new Drinks("Margarita", true, false, false);
+        margarita.addIngredient("tequila", 2, UnitOfMeasurement.OUNCE);
+        margarita.addIngredient("lime juice", 1, UnitOfMeasurement.OUNCE);
+        margarita.addIngredient("ice ", 1, UnitOfMeasurement.OUNCE);
+        margarita.addIngredient("Coarse Salt", 1/4, UnitOfMeasurement.CUP);
+        margarita.addStep("salt the rim");
+        margarita.addStep("combine salt with lime");
+        margarita.addStep("pour into wine glass and add ice");
+        recipes.add(margarita);
     }
     
     public void printBookDetails()
