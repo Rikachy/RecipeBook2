@@ -223,22 +223,22 @@ public class RecipeBook
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        
         RecipeBook recipeBook = new RecipeBook();
+            
         recipeBook.printBookDetails();
         
         boolean running = true;
         
         while(running)
         {
-            System.out.println("Recipe book options");
+            System.out.println("\nRecipe book options");
             System.out.println("1. List all recipes");
             System.out.println("2. Search recipe by name");
             System.out.println("3. Search recipes by ingredients");
             System.out.println("4. Add comment to a recipe");
-            System.out.println("5. Ger average rating for a recipe");
+            System.out.println("5. Get average rating for a recipe");
             System.out.println("6. Exit");
-            System.out.print("Choose an option: ");
+            System.out.print("\nChoose an option: ");
             
             int choice = sc.nextInt();
             sc.nextLine();
@@ -246,24 +246,44 @@ public class RecipeBook
             switch (choice)
             {
                 case 1: recipeBook.listAllRecipes();
+                        System.out.print("\nEnter a recipe name: ");
+                        String r = sc.nextLine();
+                        recipeBook.printRecipeDetails(r);
+                        System.out.println("\nType anything to head back to the option menu: ");
+                        String option = sc.nextLine();                         
                         break;
+                        
                 case 2: System.out.print("Enter a recipe name: ");
                         String name = sc.nextLine();
                         recipeBook.searchSpecificRecipe(name);
                         break;
+                        
                 case 3: System.out.print("Enter ingredient name: ");
                         String ingredient = sc.nextLine();
                         recipeBook.searchByIngredient(ingredient);
                         break;
-                case 4:
+                        
+                case 4: System.out.print("Enter recipe name: ");
+                        String recipeName = sc.nextLine();
+                        System.out.print("Enter your name: ");
+                        String username = sc.nextLine();
+                        System.out.print("Enter your comment: ");
+                        String comment = sc.nextLine();
+                        System.out.print("Enter rating (1-5): ");
+                        int rating = sc.nextInt();
+                        sc.nextLine();
+                        recipeBook.addCommentToRecipe(recipeName, username, comment, rating);
+                        break;
                     
                 case 5: System.out.print("Enter recipe name: ");
                         String recipe = sc.nextLine();
                         System.out.println("average rating: " + recipeBook.getAverageRating(recipe));
                         break;
+                        
                 case 6: System.out.print("bye bye!");
                         running = false;
                         break;
+                        
                 default: System.out.println("Invalid Option");
                 
             }
