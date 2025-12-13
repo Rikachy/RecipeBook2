@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- * Write a description of class RecipeBook here.
+ * The RecipeBook class represents a collection of recipes.
+ * Users can interact with the recipes.
  *
  * @author (Daksh Balram)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class RecipeBook
 {
@@ -12,13 +13,12 @@ public class RecipeBook
     private String author = "Rich Dax";
     private String edition = "67th";
     private String publicationDate = "04/01/67";
-    private int pageNumber;
     private ArrayList<Recipe> recipes;
     private ArrayList<Tags> tags;
     
     
     /**
-    * Constructor for objects of class RecipeBook
+    * Constructs a RecipeBook object and initializes it with a few recipes.
     */
     public RecipeBook()
     {
@@ -84,6 +84,9 @@ public class RecipeBook
         recipes.add(margarita);
     }
     
+    /**
+    * Prints the title, author, edition and the publication date of the recipe book.
+    */
     public void printBookDetails()
     {
         System.out.println("====================================");
@@ -95,6 +98,9 @@ public class RecipeBook
         System.out.println("====================================");
     }
     
+    /**
+    * Displays all recipes currently stored in the recipe book.
+    */
     public void listAllRecipes()
     {
             for(int i = 0; i < recipes.size(); i++)
@@ -103,6 +109,11 @@ public class RecipeBook
         }
     }
     
+    /**
+    * Searches for and prints all recipes that contains the given tag.
+    * 
+    * @param tag the tag you want to seach for
+    */
     public void searchByTags(Tags tag)
     {
         for (Recipe recipe : recipes)
@@ -112,9 +123,13 @@ public class RecipeBook
                 System.out.println(recipe);
             }
         }
-        //for loop to iterate through the tags collection and return all the recipes related to that tag 
     }
     
+    /**
+    * Searches for a recipe by name and prints its description if the recipe is found.
+    * 
+    * @param recipeName the name of the recipe to search for
+    */
     public void searchSpecificRecipe(String recipeName)
     {
         boolean found = false;
@@ -131,13 +146,13 @@ public class RecipeBook
         {
             System.out.println("not a recipe");    
         }
-        
-        /*while loop to iterate through the recipe collection and check if there is the recipe entered in the parameter
-         * if recipes contains recipe return recipe
-         * else print ("not a recipe")
-         */   
     }
     
+    /**
+    * Searches for prints all recipes that contain the specified ingredient.
+    * 
+    * @param ingredient the ingredient to search for
+    */
     public void searchByIngredient(String ingredient)
     {
         for (Recipe r : recipes)
@@ -149,12 +164,14 @@ public class RecipeBook
                     System.out.println(r);
                 }   
             }
-        }
-        /*for each loop to iterate through recipe collection and 
-         * if it contains the ingredient return all recipes containing that ingredient.
-         */            
+        }          
     }
     
+    /**
+    * Prints the description of a recipe with the given name.
+    * 
+    * @param recipeName the name of the recipe that you want the details of
+    */
     public void printRecipeDetails(String recipeName)
     {
          for (Recipe r : recipes)
@@ -163,22 +180,35 @@ public class RecipeBook
             {
                 System.out.println(r.getDescription());
             }
-        }
-        //gets the recipe and prints the description field from the Recipe.Class       
+        }       
     }
     
+    /**
+    * Finds and prints the highest rated recipes in the recipe book.
+    */
     public void listTopRatedRecipe()
     {
-        
-        //while loop to go through the ratings and compare them and return the highest rated one        
+      
     }
     
+    /**
+    * Allows the user to add a new recipe to the recipe book
+    */
     public void addOwnRecipe()
     {
-        //get prompts from the the scanner to add the ingredients, steps and preptime    
+ 
     }
     
-    public void addCommentToRecipe(String recipeName, String username, String text, int rating) {
+    /**
+    * Adds a comment and rating to a specified recipe.
+    * 
+    * @param recipeName the name of the recipe
+    * @param username the name of the person making the comment
+    * @param text the comment 
+    * @param rating the rating given to the recipe
+    */
+    public void addCommentToRecipe(String recipeName, String username, String text, int rating) 
+    {
         for (Recipe r : recipes) {
             if (r.getName().equalsIgnoreCase(recipeName)) {
                 r.addComment(username, text, rating, recipeName);
@@ -189,7 +219,14 @@ public class RecipeBook
         System.out.println("Recipe not found");
     }
     
-    public double getAverageRating(String recipeName) {
+    /**
+    * Calculates and returns the average rating for a given recipe.
+    * 
+    * @param recipeName the name of the recipe
+    * @return the average rating of the recipe
+    */
+    public double getAverageRating(String recipeName) 
+    {
         for (Recipe r : recipes) {
             if (r.getName().equalsIgnoreCase(recipeName)) {
                 return r.calcAverageRating(); 
@@ -199,7 +236,14 @@ public class RecipeBook
         return 0.0;
     }
     
-     public int getModeRating(String recipeName) {
+    /**
+    * Returns the most popular rating for a recipe.
+    * 
+    * @param recipeName the name of the recipe
+    * @return the most popular rating
+    */
+    public int getModeRating(String recipeName)
+    {
         for (Recipe r : recipes) {
             if (r.getName().equalsIgnoreCase(recipeName)) {
                 return r.getModeRating(); 
@@ -209,7 +253,14 @@ public class RecipeBook
         return 0; 
     } 
     
-    public void addStepToRecipe(String recipeName, String step) {
+    /**
+    * Adds a new step to the specified recipe.
+    * 
+    * @param recipeName the name of the recipe
+    * @param step the step to be added
+    */
+    public void addStepToRecipe(String recipeName, String step) 
+    {
         for (Recipe r : recipes) {
             if (r.getName().equalsIgnoreCase(recipeName)) {
                 r.addStep(step);  
@@ -220,6 +271,9 @@ public class RecipeBook
         System.out.println("Recipe not found");
     }
     
+    /**
+    * Driver method allowing the user to run the recipe book
+    */
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);

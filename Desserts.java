@@ -2,10 +2,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 /**
- * Write a description of class Desserts here.
+ * The Desserts class represents desserts type recipes.
+ * It is a sub class of the Recipe class
  *
  * @author (Daksh Balram)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class Desserts extends Recipe
 {
@@ -14,7 +15,12 @@ public class Desserts extends Recipe
     private String sweetLevel;
 
     /**
-     * Constructor for objects of class Desserts
+     * Constructs a Desserts object.
+     * 
+     * @param name the name of the dessert
+     * @param isBaked indicates if the dessert is baked or not
+     * @param texture the texture of the dessert
+     * @param sweetLevel the sweetness of the dessert
      */
     public Desserts(String name, boolean isBaked, String texture, String sweetLevel)
     {
@@ -24,15 +30,23 @@ public class Desserts extends Recipe
         this.sweetLevel = sweetLevel;
     }
 
+    /**
+     * Checks if the dessert is baked.
+     * 
+     * @return true if the dessert is baked
+     */
     public boolean checkBaked()
     {
         System.out.println(isBaked ? "This is a baked recipe" : "This is not a baked recipe");
         return isBaked;
-        /*if(this.isBaked) -> print("this is a baked recipe") return true
-         * else return false
-         */
     }
     
+    
+    /**
+     * Sets the texture of the dessert.
+     * 
+     * @param texture the texture of the dessert
+     */
     public void setTexture(String texture)
     {
         switch(texture)
@@ -42,19 +56,33 @@ public class Desserts extends Recipe
         }
     }
     
+    /**
+     * Returns the texture of the dessert.
+     * 
+     * @return the dessert texture
+     */
     public String getTexture()
     {
         return texture;  
     }
     
+    /**
+     * Returns the sweetness level of the dessert.
+     * 
+     * @return the sweetness level
+     */
     public String getSweetLevel()
     {  
         return sweetLevel;
     }
     
+    /**
+     * Determines if the dessert is gluten free.
+     * 
+     * @return true if the dessert is gluten free
+     */
     public boolean isGlutenFree()
     {
-        //return true if contains gluten
         return false;
     }
     
