@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * The test class SnacksTest.
  *
  * @author  (Daksh)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class SnacksTest
 {
@@ -40,11 +40,21 @@ public class SnacksTest
     {
     }
 
+
     @Test
-    public void TestGuac()
+    public void testGuac()
     {
-        Snacks snacks1 = new Snacks();
+        Snacks snacks1 = new Snacks(true, "donut");
         assertEquals(false, snacks1.checkIfGuacamoly());
     }
+
+    @Test
+    public void testSchoolApproriate()
+    {
+        Snacks snacks1 = new Snacks(true, "gummies");
+        assertEquals(true, snacks1.isSchoolAppropriate());
+    }
 }
+
+
 

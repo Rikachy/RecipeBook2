@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * The test class DrinksTest.
  *
  * @author  (Daksh)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class DrinksTest
 {
@@ -40,11 +40,29 @@ public class DrinksTest
     {
     }
 
+    
     @Test
-    public void HotTest()
+    public void testContainsAlchohol()
     {
-        Drinks drinks1 = new Drinks();
+        Drinks drinks1 = new Drinks("margarita", true, false, false);
+        assertEquals(true, drinks1.containsAlchohol());
+    }
+
+    @Test
+    public void testContainsDairy()
+    {
+        Drinks drinks1 = new Drinks("latte", false, true, true);
+        assertEquals(true, drinks1.containsdairy());
+    }
+
+    @Test
+    public void testHotOrCold()
+    {
+        Drinks drinks1 = new Drinks("hot chocolate", false, true, true);
         assertEquals(true, drinks1.hotOrCold());
     }
 }
+
+
+
 

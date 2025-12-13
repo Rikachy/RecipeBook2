@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Test;
  * The test class RecipeTest.
  *
  * @author  (Daksh)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class RecipeTest
 {
+    private Recipe testRecipe;
     /**
      * Default constructor for test class RecipeTest
      */
@@ -26,7 +27,13 @@ public class RecipeTest
     @BeforeEach
     public void setUp()
     {
-    }
+        testRecipe = new Recipe("Mushroom Risotto");
+        
+        testRecipe.addIngredient("Rice", 1.0, UnitOfMeasurement.CUP);
+        testRecipe.addIngredient("Broth", 4.0, UnitOfMeasurement.CUP);
+        testRecipe.addIngredient("Mushroom", 8.0, UnitOfMeasurement.OUNCE);
+        testRecipe.addStep("Add rice and toast.");
+    }   
 
     /**
      * Tears down the test fixture.
@@ -39,18 +46,29 @@ public class RecipeTest
     }
 
     @Test
-    public void TestGetMode()
+    public void testAddIngredient()
     {
-        Recipe recipe1 = new Recipe();
-        assertEquals(0, recipe1.getAverageRating());
+        assertEquals(3, testRecipe.getIngredients().size());
+        
+        testRecipe.addIngredient("Parmesan", 1.0/2, UnitOfMeasurement.CUP);
+        assertEquals(4, testRecipe.getIngredients().size());
     }
-
+    
     @Test
-    public void getAverageRating()
+    public void testAddSteps()
     {
-        Recipe recipe1 = new Recipe();
-        assertEquals(0, recipe1.getAverageRating());
+        assertEquals(1, testRecipe.getSteps().size());
+        
+        testRecipe.addStep("Stir for 20 minutes");
+        assertEquals(2, testRecipe.getSteps().size());
+    }
+    
+    @Test
+    public void testAddComment()
+    {
+        Recipe recipe1 = new Recipe("donut");
+        assertEquals(true, recipe1.addComment("michael", "pretty good", 4, "donut"));
+        assertEquals(false, recipe1.addComment("Jeff", "SOO GOOD", 6, "donut"));
+        assertEquals(false, recipe1.addComment("Mike", "Disgusting", 0, "donut"));
     }
 }
-
-

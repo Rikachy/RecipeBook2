@@ -26,11 +26,11 @@ public class RecipeBook
         tags = new ArrayList<>();
         
         Desserts cake = new Desserts("Chocolate Cake", true, "Soft", "High");
-        cake.addIngredient("flour", 7/4, UnitOfMeasurement.CUP);
+        cake.addIngredient("flour", 7.0/4, UnitOfMeasurement.CUP);
         cake.addIngredient("sugar", 2, UnitOfMeasurement.CUP);
-        cake.addIngredient("cocoa powder", 3/4, UnitOfMeasurement.CUP);
-        cake.addIngredient("baking soda", 3/2, UnitOfMeasurement.TSP);
-        cake.addIngredient("baking powser", 3/2, UnitOfMeasurement.TSP);
+        cake.addIngredient("cocoa powder", 3.0/4, UnitOfMeasurement.CUP);
+        cake.addIngredient("baking soda", 3.0/2, UnitOfMeasurement.TSP);
+        cake.addIngredient("baking powser", 3.0/2, UnitOfMeasurement.TSP);
         cake.addIngredient("eggs", 2, UnitOfMeasurement.UNIT);
         cake.addStep("Mix dry ingredients");
         cake.addStep("Add eggs");
@@ -45,7 +45,7 @@ public class RecipeBook
         pie.addIngredient("sugar", 1, UnitOfMeasurement.CUP);
         pie.addIngredient("flour", 3, UnitOfMeasurement.TBSP);
         pie.addIngredient("butter", 2, UnitOfMeasurement.TBSP);
-        pie.addIngredient("nutmeg", 1/8, UnitOfMeasurement.TBSP);
+        pie.addIngredient("nutmeg", 1.0/8, UnitOfMeasurement.TBSP);
         pie.addStep("Combine apples, suggar, flour and nutmeg");
         pie.addStep("Dot with butter");
         pie.addStep("bake until crust is golden(40 - 50 mins)");
@@ -87,7 +87,7 @@ public class RecipeBook
         margarita.addIngredient("tequila", 2, UnitOfMeasurement.OUNCE);
         margarita.addIngredient("lime juice", 1, UnitOfMeasurement.OUNCE);
         margarita.addIngredient("ice ", 1, UnitOfMeasurement.OUNCE);
-        margarita.addIngredient("Coarse Salt", 1/4, UnitOfMeasurement.CUP);
+        margarita.addIngredient("Coarse Salt", 1.0/4, UnitOfMeasurement.CUP);
         margarita.addStep("salt the rim");
         margarita.addStep("combine salt with lime");
         margarita.addStep("pour into wine glass and add ice");

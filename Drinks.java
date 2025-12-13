@@ -10,16 +10,16 @@ public class Drinks extends Recipe
     // instance variables - replace the example below with your own
     private boolean isHot;
     private String sizeName;
-    private boolean isAlcholholic;
+    private boolean isAlcoholic;
     private boolean hasDairy;
     /**
      * Constructor for objects of class Drinks
      */
-    public Drinks(String name, boolean isAlchoholic, boolean hasDairy, boolean isHot)
+    public Drinks(String name, boolean isAlcoholic, boolean hasDairy, boolean isHot)
     {
         super (name); 
         this.isHot = isHot;
-        this.isAlcholholic = isAlcholholic;
+        this.isAlcoholic = isAlcoholic;
         this.hasDairy = hasDairy;
     }
     
@@ -29,7 +29,7 @@ public class Drinks extends Recipe
         //while loop to check if alchohol is in the ingredients list of the called drink
         // return false if doesn't contain
         // else return true
-        return isAlcholholic;
+        return isAlcoholic;
     }
     
     public boolean containsdairy()
