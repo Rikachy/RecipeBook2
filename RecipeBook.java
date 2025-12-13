@@ -35,6 +35,8 @@ public class RecipeBook
         cake.addStep("Mix dry ingredients");
         cake.addStep("Add eggs");
         cake.addStep("Bake for 30 minutes");
+        cake.addComment("Alice", "Delicious!", 5,"Chocolate Cake");
+        cake.addComment("Bob", "Too sweet", 4,"Chocolate Cake");
         recipes.add(cake);
         tags.add(Tags.GLUTEN);
         
@@ -47,6 +49,8 @@ public class RecipeBook
         pie.addStep("Combine apples, suggar, flour and nutmeg");
         pie.addStep("Dot with butter");
         pie.addStep("bake until crust is golden(40 - 50 mins)");
+        pie.addComment("Emma", "Classic and tasty", 5, "Apple pie");
+        pie.addComment("Noah", "Could use more cinnamon", 1, "Apple pie");
         recipes.add(pie);
         
         Snacks bananaBites = new Snacks(true, "Chocolate banana bites");
@@ -55,6 +59,8 @@ public class RecipeBook
         bananaBites.addStep("peel the banana and and cut it into slices");
         bananaBites.addStep("microwave the chocolate for 30s");
         bananaBites.addStep("dip banana in chocolate then freeze");
+        bananaBites.addComment("Liam", "Super easy and fun", 5, "Chocolate banana bites");
+        bananaBites.addComment("Olivia", "Great quick snack", 5, "Chocolate banana bites");
         recipes.add(bananaBites);
         
         Snacks toast = new Snacks(true, "Guacamole toast");
@@ -63,6 +69,8 @@ public class RecipeBook
         toast.addStep("toast a slice of bread");
         toast.addStep("mix avocados together to make guacamole");
         toast.addStep("apply guacamole to the slice");
+        toast.addComment("Ava", "Fresh and healthy", 5, "Guacamole toast");
+        toast.addComment("Ethan", "Simple but good", 3, "Guacamole toast");
         recipes.add(toast);
         
         Drinks milk = new Drinks("Chocolate milk", false, true, false);
@@ -71,6 +79,8 @@ public class RecipeBook
         milk.addStep("pour the milk in to a glass");
         milk.addStep("mix powder in milk");
         milk.addStep("can warm up the milk before if you want it hot");
+        milk.addComment("Sophia", "Perfect after school drink", 5, "Chocolate milk");
+        milk.addComment("Mason", "Could be more chocolaty", 2, "Chocolate milk");
         recipes.add(milk);
         
         Drinks margarita = new Drinks("Margarita", true, false, false);
@@ -81,6 +91,8 @@ public class RecipeBook
         margarita.addStep("salt the rim");
         margarita.addStep("combine salt with lime");
         margarita.addStep("pour into wine glass and add ice");
+        margarita.addComment("Lucas", "Refreshing and strong", 5, "Margarita");
+        margarita.addComment("Mia", "Nice balance of flavors", 4, "Margarita");
         recipes.add(margarita);
     }
     
@@ -103,7 +115,7 @@ public class RecipeBook
     */
     public void listAllRecipes()
     {
-            for(int i = 0; i < recipes.size(); i++)
+        for(int i = 0; i < recipes.size(); i++)
         {
             System.out.println(recipes.get(i));
         }
@@ -116,12 +128,18 @@ public class RecipeBook
     */
     public void searchByTags(Tags tag)
     {
+        boolean found = false;
         for (Recipe recipe : recipes)
         {
             if(recipe.getTags().contains(tag))
             {
                 System.out.println(recipe);
+                found = true;
             }
+        }
+        if(!found)
+        {
+            System.out.println("No recipes are of this tag");
         }
     }
     
@@ -135,7 +153,7 @@ public class RecipeBook
         boolean found = false;
         for (Recipe recip : recipes)
         {
-            if(recip.getName().equals(recipeName))
+            if(recip.getName().equalsIgnoreCase(recipeName))
             {
                 System.out.println(recip.getName());
                 System.out.println(recip.getDescription());
@@ -155,16 +173,22 @@ public class RecipeBook
     */
     public void searchByIngredient(String ingredient)
     {
+        boolean found = false;
         for (Recipe r : recipes)
         {
             for(Ingredients ing : r.getIngredients())
             {
-                if(ing.getName().equals(ingredient))
+                if(ing.getName().equalsIgnoreCase(ingredient))
                 {
                     System.out.println(r);
+                    found = true;
                 }   
             }
-        }          
+        }
+        if(!found)
+        {
+            System.out.println("No recipes contains this ingredient");
+        }
     }
     
     /**
@@ -174,13 +198,19 @@ public class RecipeBook
     */
     public void printRecipeDetails(String recipeName)
     {
-         for (Recipe r : recipes)
+        boolean found = false;
+        for (Recipe r : recipes)
         {
             if (r.getName().equalsIgnoreCase(recipeName))
             {
                 System.out.println(r.getDescription());
+                found = true;
             }
-        }       
+        }
+        if(!found)
+        {
+            System.out.print("You did not enter a valid recipe");
+        }
     }
     
     /**
@@ -188,7 +218,20 @@ public class RecipeBook
     */
     public void listTopRatedRecipe()
     {
-      
+        Recipe topRecipe = null;
+        double highestAverage = 0.0;
+        
+        for(Recipe r : recipes)
+        {
+            double avg = r.calcAverageRating();
+            if(avg > highestAverage)
+            {
+                highestAverage = avg;
+                topRecipe = r;
+            }
+        }
+        System.out.println("Top Rated Recipe: " + topRecipe.getName());
+        System.out.println("Average Rating: " + highestAverage);
     }
     
     /**
@@ -196,7 +239,52 @@ public class RecipeBook
     */
     public void addOwnRecipe()
     {
- 
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter recipe name: ");
+        String name = scanner.nextLine();
+        
+        System.out.println("Choose a recipe type: ");
+        System.out.println("1. Dessert");
+        System.out.println("2. Snack");
+        System.out.println("3. Drink");
+        int type = scanner.nextInt();
+        scanner.nextLine();
+        
+        Recipe newRecipe = null;
+        switch(type)
+        {
+            case 1: System.out.print("Is it baked?(true or false): ");
+                    boolean isBaked = scanner.nextBoolean();
+                    scanner.nextLine();
+                    System.out.print("Enter texture: ");
+                    String texture = scanner.nextLine();
+                    System.out.print("Enter sweetness level: ");
+                    String sweet = scanner.nextLine();
+                    newRecipe = new Desserts(name, isBaked, texture, sweet);
+                    break;
+            
+            case 2: System.out.print("is it school appropriate? (true or false): ");
+                    boolean approp = scanner.nextBoolean();
+                    scanner.nextLine();
+                    newRecipe = new Snacks(approp, name);
+                    break;
+                    
+            case 3: System.out.print("Is it alcoholic? (true or false): ");
+                    boolean alcoholic = scanner.nextBoolean();
+                    System.out.print("Is it cold? (true/false): ");
+                    boolean cold = scanner.nextBoolean();
+                    System.out.print("Does it have dairy? (true orfalse): ");
+                    boolean dairy = scanner.nextBoolean();
+                    scanner.nextLine();
+                    newRecipe = new Drinks(name, alcoholic, dairy, cold);
+                    break;
+            
+            default: System.out.println("not a valid choice");
+        }
+        recipes.add(newRecipe);
+        System.out.println("Recipe added successfully!");
+        scanner.close();
     }
     
     /**
@@ -291,8 +379,10 @@ public class RecipeBook
             System.out.println("3. Search recipes by ingredients");
             System.out.println("4. Add comment to a recipe");
             System.out.println("5. Get average rating for a recipe");
-            System.out.println("6. Exit");
-            System.out.print("\nChoose an option: ");
+            System.out.println("6. Get the best rated recipe");
+            System.out.println("7. Add your own recipe");
+            System.out.println("8. Exit");
+            System.out.print("\nChoose an option(the number): ");
             
             int choice = sc.nextInt();
             sc.nextLine();
@@ -300,7 +390,7 @@ public class RecipeBook
             switch (choice)
             {
                 case 1: recipeBook.listAllRecipes();
-                        System.out.print("\nEnter a recipe name: ");
+                        System.out.print("\nEnter a recipe you'd like to view: ");
                         String r = sc.nextLine();
                         recipeBook.printRecipeDetails(r);
                         System.out.println("\nType anything to head back to the option menu: ");
@@ -334,12 +424,17 @@ public class RecipeBook
                         System.out.println("average rating: " + recipeBook.getAverageRating(recipe));
                         break;
                         
-                case 6: System.out.print("bye bye!");
+                case 6: recipeBook.listTopRatedRecipe();
+                        break;
+                        
+                case 7: recipeBook.addOwnRecipe();
+                        break;
+                        
+                case 8: System.out.print("bye bye!");
                         running = false;
                         break;
                         
                 default: System.out.println("Invalid Option");
-                
             }
         }
         sc.close();
