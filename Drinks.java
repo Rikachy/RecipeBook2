@@ -1,6 +1,6 @@
 
 /**
- * The Desserts class represents drinks type recipes.
+ * The Desserts class represents drinks-type recipes.
  * It is a sub class of the Recipe class
  * @author (Richard)
  * @version (1)
@@ -13,7 +13,12 @@ public class Drinks extends Recipe
     private boolean isAlcoholic;
     private boolean hasDairy;
     /**
-     * Constructor for objects of class Drinks
+     * Constructs a drinks object with some of its properties
+     * 
+     * @param name : the name of drink
+     * @param isAlcoholic : if the drink contains Alcohol
+     * @param hasDairy : if the drink contains dairy
+     * @param isHot : if the drink is hot
      */
     public Drinks(String name, boolean isAlcoholic, boolean hasDairy, boolean isHot)
     {
@@ -23,15 +28,25 @@ public class Drinks extends Recipe
         this.hasDairy = hasDairy;
     }
     
-    public boolean containsAlchohol()
+    /**
+     * indicated if the drink contains alcohol 
+     * 
+     * @return true if drink is alcoholic/false if is not
+     */
+    public boolean containsAlcohol()
     {
         //get ingrdients from Recipe.class for the recipe of called drink
-        //while loop to check if alchohol is in the ingredients list of the called drink
+        //while loop to check if Alcohol is in the ingredients list of the called drink
         // return false if doesn't contain
         // else return true
         return isAlcoholic;
     }
     
+    /**
+     * indicates if the drink has dairy
+     * 
+     * @return true if the drink has dairy/false if it doesn't
+     */
     public boolean containsdairy()
     {
         /*get ingrdients from Recipe.class for the recipe of called drink
@@ -43,6 +58,11 @@ public class Drinks extends Recipe
         return hasDairy;
     }
     
+    /**
+     * determines if the drink is hot or cold
+     * 
+     * @return true if drink is hot/false if is cold
+     */
     public boolean hotOrCold(){
         /*
         if(this.IsHot) -> systm. prints("it is a hot drink...")  return true 

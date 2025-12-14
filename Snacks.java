@@ -14,7 +14,10 @@ public class Snacks extends Recipe
     // instead of having a scale, it would be high/low/medium
 
     /**
-     * Constructor for objects of class Snacks
+     * constructs a snacks object 
+     * 
+     * @param schoolAppropriate : if the snack is allowed to bring to school
+     * @param name : the name of the snack recipe
      */
     public Snacks(boolean schoolAppropriate,  String name )
     {
@@ -22,17 +25,15 @@ public class Snacks extends Recipe
      this.schoolAppropriate = schoolAppropriate;
     }
 
-
+    /**
+     * checks if the snack contains guacamole
+     * 
+     * @return true if has guacamole/false if does not
+     */
     //a meme method 
-    public boolean checkIfGuacamoly()
+    public boolean checkIfGuacamole()
     {
-        /*Goes trough the list of ingredients needed for the snacks
-         * if one of those elements isequals guacamoly
-         * return true 
-         * systm prints("has guac...")
-         * else return false
-         * syst prints ("this snack does now have guac")
-         */
+
         for (Ingredients checkGuac : ingredients){
             if(checkGuac.getName().equals("guacamole"))
             {
@@ -44,10 +45,12 @@ public class Snacks extends Recipe
         return false;
     } 
     
-    /* method used to be called containsNumIngredients
-     *normally a snack is meant to be small, so this method help determines
-     the size and complexity of the snack
-    */
+    /**
+     * returns the number of ingredients in the snack
+     * see if the snack is easy to prepare(complexity level)
+     * 
+     * @return the # of ingredients
+     */
     
      
     public int numOfIngredients(){
@@ -57,11 +60,20 @@ public class Snacks extends Recipe
         return ingredients.size(); 
     }
     
+    /**
+     * checks if the snack is school appropriate
+     * 
+     * @return true if appropriate/false if not appropriate
+     */
     public boolean isSchoolAppropriate()
     {
         return schoolAppropriate;
     }
     
+    /**
+     * the perishability level of the snack (how likely it is to go bad)
+     * possible answers are : high, medium, low
+     */
     public void setPerishabilityLevel()
     {
         Scanner sc = new Scanner(System.in);
@@ -72,6 +84,11 @@ public class Snacks extends Recipe
         
     }
     
+    /**
+     * returns the perishability level of the snack
+     * 
+     * @return perishability level
+     */
     public String getPerishabilityLevel()
     {
         return perishability;

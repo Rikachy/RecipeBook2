@@ -35,7 +35,7 @@ public enum UnitOfMeasurement
     /**
      * Returns the string representation of the unit of measurement.
      * 
-     * @retrun the measurement name
+     * @return the measurement name
      */
     public String getmeasurement()
     {
