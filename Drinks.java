@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Drinks here.
- *
+ * The Desserts class represents drinks type recipes.
+ * It is a sub class of the Recipe class
  * @author (Richard)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class Drinks extends Recipe
 {

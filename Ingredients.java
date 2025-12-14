@@ -14,7 +14,7 @@ public class Ingredients
     private UnitOfMeasurement unit;
 
     /**
-     * Constructor an Ingredient object.
+     * Constructor of an Ingredient object.
      * 
      * @param name the name of the ingredient
      * @param amount the quantity of the ingredient

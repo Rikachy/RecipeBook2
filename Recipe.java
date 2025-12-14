@@ -2,10 +2,11 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 /**
- * Write a description of class Recipe here.
+ * Stores methods and fields for a recipe
+ * It is the parent class of the sub-classes : Drinks, Snacks, Desserts
  *
  * @author (Richard)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class Recipe
 {
@@ -24,7 +25,8 @@ public class Recipe
     
     
     /**
-     * Constructor for objects of class Recipe
+     * Constructs a Recipe and the needed lists
+     * @param name : the name of the recipe 
      */
     public Recipe(String name)
     {
@@ -38,12 +40,32 @@ public class Recipe
     
     }
     
+    /**
+     * adds new ingredient to the recipe
+     * 
+     * @param name : the name of the ingredient
+     * @param amount : the quantity of the ingredient
+     * @param unit : the unit of measurement
+     */
     public void addIngredient(String name, double amount, UnitOfMeasurement unit)
     {
         ingredients.add(new Ingredients(name, amount, unit));
     }
-        /**
-     * Return the number of customer comments for this item.
+    
+    /**
+     * adda a tag to the recipe
+     * 
+     * @param tag : the tag that is associated with the recipe
+     */
+     public void addTag(Tags tag) 
+    {
+        tags.add(tag);
+    }
+    
+    /**
+     * Returns the total # of comments 
+     * 
+     * @return the number of customer comments for this item.
      */
     public int getNumberOfComments()
     {
@@ -51,12 +73,13 @@ public class Recipe
     }
     
         /**
-     * Add a comment to the comment list of this sales item. Return true if
-     * successful; false if the comment was rejected.
+     * adda a user comment and rating to a recipe
      * 
-     * The comment will be rejected if the same author has already left a  
-     * comment, or if the rating is invalid. Valid ratings are numbers between
-     * 1 and 5 (inclusive).
+     * @param username : the author of the comment
+     * @param text : the text of the comment
+     * @param rating : a number between 1-5 to rate the recipe
+     * @param nameOfRecipe : namke of the recipe being reviewd
+     * @return true if comment is added/false if comment isn't added
      */
     public boolean addComment(String username, String text, int rating, String nameOfRecipe)
     {
@@ -69,14 +92,21 @@ public class Recipe
         return true;
     }
     
+    /**     
+     * adds a step to the recipe
+     * 
+     * @param step : the step being added
+     */
     public void addStep(String step)
     {
         steps.add(step);
     }
     
                 /**
-     * Check whether the given rating is invalid. Return true if it is invalid.
-     * Valid ratings are in the range [1..5].
+     * Check whether the given rating is invalid. 
+     * 
+     * @param  rating : the rating the user input
+     * @return true if rating is invalid/false if valid
      */
     private boolean ratingInvalid(int rating)
     {
@@ -86,6 +116,8 @@ public class Recipe
 
       /**
      * //gets all rating and find the mean(average) 
+     * 
+     * @return the avg rating/ 0.0 if no rating is found
      */
     public double calcAverageRating()
     {
@@ -110,9 +142,13 @@ public class Recipe
         return sum / ratings.size();
     }
     
-    //tells you which rating is given most often given
-    // ex. 2, 4, 2, 5, 4, 2 the following has the mode of 2
-    public int getModeRating()
+   
+        /** tells you which rating is most often given
+         * 
+        * @return  the most common rating of a recipe
+        */
+        public int getModeRating()
+    
     {
         /*goes through all of the rating with iterator or for loop
          * everytime 1 is spotted add 1 to a
@@ -169,18 +205,15 @@ public class Recipe
         return mode; 
     }
     
+    /** 
+     * scales all ingredient by the scaler
+     * 
+     * @param  scaler : the amount  the user wants to multiply by
+     * @return new HashSet with the scaled ingredients 
+     */
 
-    // returns a HashSet and not double
     public HashSet<Ingredients> scaleRecipe(double scaler){
-        /* adjusting the quantity of the ingredients with the scaler input.
-         * important to put restriction so you don't go below 0 or in negatives
-         * 
-         * select the recipe you want to modify with the help of a hashmap
-         * after selecting, it will give you the value of your hashmap which will be the HashSet ingredients
-         * Iterator to go through each element of that HashSet and applying the scaler to each ingredient
-         * Storing the new values into a local variable HashSet
-         * retur the new HashSet
-         */
+
         HashSet<Ingredients> scaledIngredients = new HashSet<>();
         for (Ingredients ing : ingredients) {
             Ingredients updated = new Ingredients(ing.getName(), ing.getAmount() * scaler, UnitOfMeasurement.CUP);
@@ -189,34 +222,70 @@ public class Recipe
         return scaledIngredients;
     }
     
+    /**
+     * retunrs the name of the recipe
+     * 
+     * @return the recipe name
+     */
     public String getName()
     {
         return name;
     }
-    
+    /**
+     * returns the list of steps
+     * 
+     * @return steps of the recipe
+     */
     public ArrayList<String> getSteps()
     {
         return steps; 
     }
-    
+    /**
+     * returns the description of a recipe
+     * 
+     * @return the description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+    /**
+     * returns the prep time
+     * 
+     * @return prep time
+     */
     public double getPrepTime() 
     {
         return prepTime;
     }
-    
+    /**
+     * returns the tags associated with the recipe
+     * 
+     * @return the recipe tag(s)
+     */
     public ArrayList<Tags> getTags()
     {
         return tags;
     }
-    
+    /**
+     * returns the ingredients used in the recipe
+     * 
+     * @return ingredient set
+     */
     public HashSet<Ingredients> getIngredients()
     {
         return ingredients;
     }
     
+    /**
+     * returns a formatted string representation of the recipe
+     * 
+     * @return recipe summary
+     */
+    @Override
+    public String toString()
+    {
+        return "The recipe's name is : " +name + "The Avg Rating is : " + calcAverageRating();
+    }   
+
 }

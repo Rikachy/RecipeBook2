@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- * Write a description of class Snacks here.
- *
+ * The Desserts class represents snacks type recipes.
+ * It is a sub class of the Recipe class
  * @author (Richard)
- * @version (a version number or a date)
+ *  @version (1)
  */
 public class Snacks extends Recipe
 {

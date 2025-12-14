@@ -1,9 +1,9 @@
 
 /**
- * Enumeration class Tags - write a description of the enum class here
- *
- * @author (your name here)
- * @version (version number or date here)
+ * The Tag enum represents the different tags that can be associated with 
+ * a recipe
+ * @author (Richard)
+ * @version (1)
  */
 public enum Tags
 {
