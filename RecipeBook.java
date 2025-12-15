@@ -322,6 +322,22 @@ public class RecipeBook
     }
     
     /**
+     * Adds a tag to a selected recipe
+     * 
+     * 
+     */
+    public void addTag(String recipeName, Tags tag)
+    {
+        for (Recipe r : recipes) {
+            if (r.getName().equalsIgnoreCase(recipeName)) {
+                r.addTag(tag);
+                System.out.println("Tag added");
+                return;
+            }
+        }
+        System.out.println("Recipe not found");
+    }
+    /**
     * Calculates and returns the average rating for a given recipe.
     * 
     * @param recipeName the name of the recipe

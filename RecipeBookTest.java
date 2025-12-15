@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class RecipeBookTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  (Richard)
+ * @version (1)
  */
 public class RecipeBookTest
 {
@@ -41,16 +41,58 @@ public class RecipeBookTest
     }
 
     @Test
-    public void TestRecipe()
+    public void testCommentsandList()
     {
         RecipeBook recipeBo1 = new RecipeBook();
-        recipeBo1.printBookDetails();
-        recipeBo1.searchByIngredient("Apple");
         recipeBo1.addOwnRecipe();
+        recipeBo1.addCommentToRecipe("hot water", "abby", "Good", 5);
+        recipeBo1.addOwnRecipe();
+        recipeBo1.addCommentToRecipe("hot WAter", "nolly", "", 2);
+        recipeBo1.addCommentToRecipe("hot water", "booly", "", 2);
+        assertEquals(2, recipeBo1.getModeRating("hot water"));
+        assertEquals(3, recipeBo1.getAverageRating("hot water"), 0.1);
         recipeBo1.listAllRecipes();
-        recipeBo1.listByType();
-        recipeBo1.searchSpecificRecipe("Ice Tea");
-        
+        recipeBo1.listTopRatedRecipe();
+        recipeBo1.printBookDetails();
+        recipeBo1.printRecipeDetails("margarita");
+        recipeBo1.scaleRecipeIngredients("margarita", 3);
+        recipeBo1.printRecipeDetails("margarita");
+    }
+
+    @Test
+    public void testSearchBy()
+    {
+        RecipeBook recipeBo1 = new RecipeBook();
+        recipeBo1.searchByIngredient("apples");
+        recipeBo1.searchByTags(Tags.GLUTEN);
+        recipeBo1.searchSpecificRecipe("apple pie");
+    }
+
+    @Test
+    public void testAddTagandAddsteps()
+    {
+        RecipeBook recipeBo1 = new RecipeBook();
+        recipeBo1.addOwnRecipe();
+        recipeBo1.addTag("fries and chips", Tags.SPICY);
+        recipeBo1.addStepToRecipe("fries and chips", "buy chips");
+        recipeBo1.addStepToRecipe("fries and chips", "put chips in a bag");
+        recipeBo1.addStepToRecipe("fries and chips", "put the fries in the bag");
+        recipeBo1.searchByTags(Tags.SPICY);
+    }
+
+    @Test
+    public void Test4()
+    {
+        RecipeBook recipeBo1 = new RecipeBook();
+        recipeBo1.scaleRecipeIngredients("bananabites", 5.0);
+        recipeBo1.scaleRecipeIngredients("chocolate banana bites", 3);
     }
 }
+
+
+
+
+
+
+
 
