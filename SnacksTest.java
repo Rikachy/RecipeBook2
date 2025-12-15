@@ -45,7 +45,7 @@ public class SnacksTest
     public void testGuac()
     {
         Snacks snacks1 = new Snacks(true, "donut");
-        assertEquals(false, snacks1.checkIfGuacamoly());
+        assertEquals(false, snacks1.checkIfGuacamole());
     }
 
     @Test

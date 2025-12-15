@@ -38,7 +38,7 @@ public class RecipeBook
         cake.addComment("Alice", "Delicious!", 5,"Chocolate Cake");
         cake.addComment("Bob", "Too sweet", 4,"Chocolate Cake");
         recipes.add(cake);
-        cake.addTag(Tags.GLUTEN);
+        tags.add(Tags.GLUTEN);
         
         Desserts pie = new Desserts("Apple pie", true, "flaky", "Medium");
         pie.addIngredient("apples", 7, UnitOfMeasurement.CUP);
