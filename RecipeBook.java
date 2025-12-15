@@ -52,6 +52,7 @@ public class RecipeBook
         pie.addComment("Emma", "Classic and tasty", 5, "Apple pie");
         pie.addComment("Noah", "Could use more cinnamon", 1, "Apple pie");
         recipes.add(pie);
+        pie.addTag(Tags.GLUTEN);
         
         Snacks bananaBites = new Snacks(true, "Chocolate banana bites");
         bananaBites.addIngredient("banana", 1, UnitOfMeasurement.UNIT);
@@ -62,6 +63,7 @@ public class RecipeBook
         bananaBites.addComment("Liam", "Super easy and fun", 5, "Chocolate banana bites");
         bananaBites.addComment("Olivia", "Great quick snack", 5, "Chocolate banana bites");
         recipes.add(bananaBites);
+        bananaBites.addTag(Tags.VEGAN);
         
         Snacks toast = new Snacks(true, "Guacamole toast");
         toast.addIngredient("avocado", 2, UnitOfMeasurement.UNIT);
@@ -72,6 +74,7 @@ public class RecipeBook
         toast.addComment("Ava", "Fresh and healthy", 5, "Guacamole toast");
         toast.addComment("Ethan", "Simple but good", 3, "Guacamole toast");
         recipes.add(toast);
+        toast.addTag(Tags.VEGAN);
         
         Drinks milk = new Drinks("Chocolate milk", false, true, false);
         milk.addIngredient("milk", 1, UnitOfMeasurement.CUP);
@@ -82,6 +85,7 @@ public class RecipeBook
         milk.addComment("Sophia", "Perfect after school drink", 5, "Chocolate milk");
         milk.addComment("Mason", "Could be more chocolaty", 2, "Chocolate milk");
         recipes.add(milk);
+        milk.addTag(Tags.DAIRY);
         
         Drinks margarita = new Drinks("Margarita", true, false, false);
         margarita.addIngredient("tequila", 2, UnitOfMeasurement.OUNCE);
@@ -94,6 +98,7 @@ public class RecipeBook
         margarita.addComment("Lucas", "Refreshing and strong", 5, "Margarita");
         margarita.addComment("Mia", "Nice balance of flavors", 4, "Margarita");
         recipes.add(margarita);
+        margarita.addTag(Tags.VEGAN);
     }
     
     /**
@@ -409,9 +414,10 @@ public class RecipeBook
             System.out.println("3. Search recipes by ingredients");
             System.out.println("4. Add comment to a recipe");
             System.out.println("5. Get average rating for a recipe");
+            System.out.println("5. Get average rating for a recipe");
             System.out.println("6. Get the best rated recipe");
-            System.out.println("7. Add your own recipe");
-            System.out.println("8. Exit");
+            System.out.println("9. Add your own recipe");
+            System.out.println("10. Exit");
             System.out.print("\nChoose an option(the number): ");
             
             int choice = sc.nextInt();
@@ -427,17 +433,52 @@ public class RecipeBook
                         String option = sc.nextLine();                         
                         break;
                         
-                case 2: System.out.print("Enter a recipe name: ");
+                case 2: System.out.print("Enter recipe name: ");
+                        String recipeToScale = sc.nextLine();
+                        System.out.print("Enter scale factor: ");
+                        double factor = sc.nextDouble();
+                        sc.nextLine();
+                        recipeBook.scaleRecipeIngredients(recipeToScale, factor);
+                        break;
+                        
+                case 3: System.out.print("Enter a recipe name: ");
                         String name = sc.nextLine();
                         recipeBook.searchSpecificRecipe(name);
                         break;
                         
-                case 3: System.out.print("Enter ingredient name: ");
+                case 4: System.out.print("Enter ingredient name: ");
                         String ingredient = sc.nextLine();
                         recipeBook.searchByIngredient(ingredient);
                         break;
                         
-                case 4: System.out.print("Enter recipe name: ");
+                case 5: System.out.println("Choose a tag:");
+                        System.out.println("1. GLUTEN");
+                        System.out.println("2. DAIRY");
+                        System.out.println("3. VEGAN");
+    
+                        System.out.print("Enter tag number: ");
+                        int tagChoice = sc.nextInt();
+                        sc.nextLine();
+
+                if (tagChoice == 1)
+                {
+                    recipeBook.searchByTags(Tags.GLUTEN);
+                }
+                else if (tagChoice == 2)
+                {
+                    recipeBook.searchByTags(Tags.DAIRY);
+                }
+                else if (tagChoice == 3)
+                {
+                    recipeBook.searchByTags(Tags.VEGAN);
+                }
+                else
+                {
+                    System.out.println("Invalid tag choice");
+                }
+                        break;
+                
+                case 6: System.out.print("Enter recipe name: ");
                         String recipeName = sc.nextLine();
                         System.out.print("Enter your name: ");
                         String username = sc.nextLine();
@@ -449,18 +490,18 @@ public class RecipeBook
                         recipeBook.addCommentToRecipe(recipeName, username, comment, rating);
                         break;
                     
-                case 5: System.out.print("Enter recipe name: ");
+                case 7: System.out.print("Enter recipe name: ");
                         String recipe = sc.nextLine();
                         System.out.println("average rating: " + recipeBook.getAverageRating(recipe));
                         break;
                         
-                case 6: recipeBook.listTopRatedRecipe();
+                case 8: recipeBook.listTopRatedRecipe();
                         break;
                         
-                case 7: recipeBook.addOwnRecipe();
+                case 9: recipeBook.addOwnRecipe();
                         break;
                         
-                case 8: System.out.print("bye bye!");
+                case 10: System.out.print("bye bye!");
                         running = false;
                         break;
                         
