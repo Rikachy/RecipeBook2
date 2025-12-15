@@ -33,3 +33,5 @@ scaled, method doesn't return the fully scaled quantity.
 
 Search by tag in recipebook and setting the UnitOfMeasurement in ingredients can be hard to navigate. 
 You have to input Tags.(tag you want)/UnitOfMeasurement.(unit you want)
+
+An equals method was not able to be implemented for deliverable 2.

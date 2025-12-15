@@ -421,12 +421,13 @@ public class RecipeBook
         {
             System.out.println("\nRecipe book options");
             System.out.println("1. List all recipes");
-            System.out.println("2. Search recipe by name");
-            System.out.println("3. Search recipes by ingredients");
-            System.out.println("4. Add comment to a recipe");
-            System.out.println("5. Get average rating for a recipe");
-            System.out.println("5. Get average rating for a recipe");
-            System.out.println("6. Get the best rated recipe");
+            System.out.println("2. Scale A recipe");
+            System.out.println("3. Search recipe by name");
+            System.out.println("4. Search recipes by ingredients");
+            System.out.println("5. Search by tags");
+            System.out.println("6. Add comment to a recipe");
+            System.out.println("7. Get average rating for a recipe");
+            System.out.println("8. Get the best rated recipe");
             System.out.println("9. Add your own recipe");
             System.out.println("10. Exit");
             System.out.print("\nChoose an option(the number): ");
