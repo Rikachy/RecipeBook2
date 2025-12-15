@@ -130,20 +130,20 @@ public class RecipeBook
      * @param factor : by how much you want to scale the recipe
      * @return the scaled recipe
      */
-    public HashSet<Ingredients> scaleRecipeIngredients(String recipeName, double factor)
+    public void scaleRecipeIngredients(String recipeName, double factor)
     {
         for (Recipe r : recipes)
         {
             if (r.getName().equalsIgnoreCase(recipeName))
             {
                 HashSet<Ingredients> scaledIngredients = r.scaleRecipe(factor);
-                r.scaleRecipe(factor);
                 System.out.println("Scaled recipe: " + recipeName);
-                return scaledIngredients;
+                System.out.println("Newly scaled amount : " + scaledIngredients);
+                return;
             }
         }
         System.out.println("Recipe not found");
-        return null;
+        
     }
     
     /**

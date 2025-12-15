@@ -81,7 +81,18 @@ public class RecipeBookTest
     }
 
 
+
+    
+
+    @Test
+    public void testScaler()
+    {
+        RecipeBook recipeBo1 = new RecipeBook();
+        recipeBo1.scaleRecipeIngredients("chocolate banana bites", 5);
+    }
 }
+
+
 
 
 
