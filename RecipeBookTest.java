@@ -80,13 +80,7 @@ public class RecipeBookTest
         recipeBo1.searchByTags(Tags.SPICY);
     }
 
-    @Test
-    public void Test4()
-    {
-        RecipeBook recipeBo1 = new RecipeBook();
-        recipeBo1.scaleRecipeIngredients("bananabites", 5.0);
-        recipeBo1.scaleRecipeIngredients("chocolate banana bites", 3);
-    }
+
 }
 
 

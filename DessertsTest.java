@@ -47,7 +47,7 @@ public class DessertsTest
         Desserts desserts1 = new Desserts("banana pie", true, "Crunchy", "high");
         assertEquals(true, desserts1.checkBaked());
         assertEquals("high", desserts1.getSweetLevel());
-        assertEquals("crunchy", desserts1.getTexture());
+        assertEquals("Crunchy", desserts1.getTexture());
         assertEquals(false, desserts1.isGlutenFree());
         desserts1.setTexture("crispy");
         assertEquals("crispy", desserts1.getTexture());

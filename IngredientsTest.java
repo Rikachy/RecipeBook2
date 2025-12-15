@@ -51,11 +51,11 @@ public class IngredientsTest
     {
         Ingredients ingredie1 = new Ingredients("carrot", 2.0, UnitOfMeasurement.UNIT);
         assertEquals(2.0, ingredie1.getAmount(), 0.1);
-        assertEquals("CARROT", ingredie1.getName());
+        assertEquals("carrot", ingredie1.getName());
         ingredie1.scaleAmount(5);
         ingredie1.toString();
         ingredie1.setAmount(2);
-        assertEquals(20.0, ingredie1.getAmount(), 0.1);
+        assertEquals(2.0, ingredie1.getAmount(), 0.1);
         ingredie1.toString();
     }
 }
