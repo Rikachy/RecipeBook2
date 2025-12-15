@@ -304,7 +304,7 @@ public class RecipeBook
                     boolean alcoholic = scanner.nextBoolean();
                     System.out.print("Is it cold? (true/false): ");
                     boolean cold = scanner.nextBoolean();
-                    System.out.print("Does it have dairy? (true orfalse): ");
+                    System.out.print("Does it have dairy? (true or false): ");
                     boolean dairy = scanner.nextBoolean();
                     scanner.nextLine();
                     newRecipe = new Drinks(name, alcoholic, dairy, cold);

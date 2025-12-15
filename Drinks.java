@@ -7,7 +7,6 @@
  */
 public class Drinks extends Recipe
 {
-    // instance variables - replace the example below with your own
     private boolean isHot;
     private String sizeName;
     private boolean isAlcoholic;
@@ -35,10 +34,6 @@ public class Drinks extends Recipe
      */
     public boolean containsAlcohol()
     {
-        //get ingrdients from Recipe.class for the recipe of called drink
-        //while loop to check if Alcohol is in the ingredients list of the called drink
-        // return false if doesn't contain
-        // else return true
         return isAlcoholic;
     }
     
@@ -49,12 +44,6 @@ public class Drinks extends Recipe
      */
     public boolean containsdairy()
     {
-        /*get ingrdients from Recipe.class for the recipe of called drink
-         while loop to check if dairy is in the ingredients list of the called drink
-         the called drink
-         return false if doesn't contain
-         else return true
-         */
         return hasDairy;
     }
     
@@ -64,10 +53,6 @@ public class Drinks extends Recipe
      * @return true if drink is hot/false if is cold
      */
     public boolean hotOrCold(){
-        /*
-        if(this.IsHot) -> systm. prints("it is a hot drink...")  return true 
-        else (drink is cold) syst. prints("it is a cold drink...") return false 
-        */
         if (isHot == true){
            System.out.println("Drink is hot");
         }
@@ -76,5 +61,4 @@ public class Drinks extends Recipe
         }
         return isHot;  
     }
-    
 }

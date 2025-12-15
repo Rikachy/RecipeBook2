@@ -10,7 +10,6 @@ import java.util.HashSet;
  */
 public class Recipe
 {
-    // instance variables - replace the example below with your own
     protected ArrayList<String> steps;
     protected HashSet<Ingredients> ingredients;
     protected double prepTime;
@@ -22,7 +21,6 @@ public class Recipe
     
     private ArrayList<Comment> comments;
     private int rating; 
-    
     
     /**
      * Constructs a Recipe and the needed lists
@@ -83,7 +81,7 @@ public class Recipe
      */
     public boolean addComment(String username, String text, int rating, String nameOfRecipe)
     {
-        if(ratingInvalid(rating)) {  // reject invalid ratings
+        if(ratingInvalid(rating)) { 
             return false;
         }
     
@@ -102,7 +100,7 @@ public class Recipe
         steps.add(step);
     }
     
-                /**
+    /**
      * Check whether the given rating is invalid. 
      * 
      * @param  rating : the rating the user input
@@ -113,21 +111,13 @@ public class Recipe
         return rating < 1 || rating > 5;
     }
     
-
-      /**
+    /**
      * //gets all rating and find the mean(average) 
      * 
      * @return the avg rating/ 0.0 if no rating is found
      */
     public double calcAverageRating()
     {
-        
-        /*select a specific recipe and check if it has any comments/review
-         * if it doesn't - don't perform and return null
-         * else - add all of the reviews together snd divide it by get the number of reviews
-         * store that value into a variable
-         * return said variable
-        */
         if (ratings == null)
         {
             System.out.print("There is currently no rating.");
@@ -138,32 +128,22 @@ public class Recipe
         {
             sum = sum + rating;
         }
-        
         return sum / ratings.size();
     }
     
    
-        /** tells you which rating is most often given
-         * 
-        * @return  the most common rating of a recipe
-        */
-        public int getModeRating()
+    /** tells you which rating is most often given
+     * 
+     * @return  the most common rating of a recipe
+     */
+    public int getModeRating()
     
     {
-        /*goes through all of the rating with iterator or for loop
-         * everytime 1 is spotted add 1 to a
-         * everytime 2 is spotted add 1 to b
-         * everytime 3 is spotted add 1 to c
-         * everytime 4 is spotted add 1 to d
-         * everytime 5 is spotted add 1 to e
-         * compare a,b,c,d,e and return the largest digit
-         */
-        
-        int a = 0;// count of 1
-        int b = 0; // count of 2
-        int c = 0; // count of 3
-        int d = 0; // count of 4
-        int e = 0; // count of 5
+        int a = 0;
+        int b = 0; 
+        int c = 0;
+        int d = 0;
+        int e = 0; 
         int max = a;
         int mode = 1;
                 for (int rating : ratings) {
@@ -231,6 +211,7 @@ public class Recipe
     {
         return name;
     }
+    
     /**
      * returns the list of steps
      * 
@@ -240,6 +221,7 @@ public class Recipe
     {
         return steps; 
     }
+    
     /**
      * returns the description of a recipe
      * 
@@ -274,6 +256,7 @@ public class Recipe
         }
         return description;
     }
+    
     /**
      * returns the prep time
      * 
@@ -283,6 +266,7 @@ public class Recipe
     {
         return prepTime;
     }
+    
     /**
      * returns the tags associated with the recipe
      * 
@@ -292,6 +276,7 @@ public class Recipe
     {
         return tags;
     }
+    
     /**
      * returns the ingredients used in the recipe
      * 
@@ -310,7 +295,6 @@ public class Recipe
     @Override
     public String toString()
     {
-        return name + " The Avg Rating is : " + calcAverageRating();
+        return name + "| The Avg Rating is : " + calcAverageRating();
     }   
-
 }

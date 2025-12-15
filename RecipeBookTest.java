@@ -1,5 +1,3 @@
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -80,10 +78,6 @@ public class RecipeBookTest
         recipeBo1.searchByTags(Tags.SPICY);
     }
 
-
-
-    
-
     @Test
     public void testScaler()
     {
@@ -91,13 +85,3 @@ public class RecipeBookTest
         recipeBo1.scaleRecipeIngredients("chocolate banana bites", 5);
     }
 }
-
-
-
-
-
-
-
-
-
-

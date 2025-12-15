@@ -78,5 +78,4 @@ public class Ingredients
     {
         return amount + " " + unit + " of " + name;
     }
-
 }

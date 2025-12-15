@@ -1,5 +1,4 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,7 +38,6 @@ public class DrinksTest
     public void tearDown()
     {
     }
-
     
     @Test
     public void testContainsAlchohol()
@@ -62,7 +60,3 @@ public class DrinksTest
         assertEquals(true, drinks1.hotOrCold());
     }
 }
-
-
-
-

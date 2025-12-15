@@ -8,10 +8,8 @@ import java.util.Scanner;
  */
 public class Snacks extends Recipe
 {
-    // instance variables - replace the example below with your own
     private boolean schoolAppropriate;
     private String perishability;
-    // instead of having a scale, it would be high/low/medium
 
     /**
      * constructs a snacks object 
@@ -33,7 +31,6 @@ public class Snacks extends Recipe
     //a meme method 
     public boolean checkIfGuacamole()
     {
-
         for (Ingredients checkGuac : ingredients){
             if(checkGuac.getName().equals("guacamole"))
             {
@@ -54,9 +51,6 @@ public class Snacks extends Recipe
     
      
     public int numOfIngredients(){
-        /*returns the size of the HashSet of the wanted recipe
-         * 
-         */
         return ingredients.size(); 
     }
     
@@ -80,8 +74,6 @@ public class Snacks extends Recipe
         
         System.out.print("How perishable is your snack : high, medium, low");
         perishability = sc.nextLine();
-        
-        
     }
     
     /**
@@ -92,6 +84,5 @@ public class Snacks extends Recipe
     public String getPerishabilityLevel()
     {
         return perishability;
-    }
-        
+    } 
 }

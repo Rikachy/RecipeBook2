@@ -55,6 +55,3 @@ public class SnacksTest
         assertEquals(true, snacks1.isSchoolAppropriate());
     }
 }
-
-
-
