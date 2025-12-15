@@ -22,6 +22,21 @@ public class Comment
         this.rating = rating;
         this.nameOfRecipe = nameOfRecipe;
     }
+    
+    public String getUsername()
+    {
+        return username;
+    }
+    
+    public String getText()
+    {
+        return text;
+    }
+    
+    public int getRating()
+    {
+        return rating;
+    }
 
     /**
      * An example of a method - replace this comment with your own

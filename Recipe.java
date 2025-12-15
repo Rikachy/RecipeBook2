@@ -247,6 +247,31 @@ public class Recipe
      */
     public String getDescription()
     {
+        System.out.println("Recipe: " + name);
+        System.out.println("\nIngredients:");
+        for (Ingredients ing : ingredients)
+        {
+            System.out.println(" - " + ing);
+        }
+
+        System.out.println("\nSteps:");
+        for (String step : steps)
+        {
+            System.out.println(" - " + step);
+        }
+
+        System.out.println("\nComments:");
+        if (comments.isEmpty())
+        {
+            System.out.println(" No comments yet.");
+        }
+         else
+        {
+            for (Comment c : comments)
+            {
+                System.out.println(" " + c.getUsername() + " (Rating: " + c.getRating() + "): " + c.getText());
+            }
+        }
         return description;
     }
     /**
@@ -285,7 +310,7 @@ public class Recipe
     @Override
     public String toString()
     {
-        return "The recipe's name is : " +name + "The Avg Rating is : " + calcAverageRating();
+        return name + "The Avg Rating is : " + calcAverageRating();
     }   
 
 }

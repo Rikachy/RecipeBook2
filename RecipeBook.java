@@ -38,7 +38,7 @@ public class RecipeBook
         cake.addComment("Alice", "Delicious!", 5,"Chocolate Cake");
         cake.addComment("Bob", "Too sweet", 4,"Chocolate Cake");
         recipes.add(cake);
-        tags.add(Tags.GLUTEN);
+        cake.addTag(Tags.GLUTEN);
         
         Desserts pie = new Desserts("Apple pie", true, "flaky", "Medium");
         pie.addIngredient("apples", 7, UnitOfMeasurement.CUP);
@@ -119,6 +119,20 @@ public class RecipeBook
         {
             System.out.println(recipes.get(i));
         }
+    }
+    
+    public void scaleRecipeIngredients(String recipeName, double factor)
+    {
+        for (Recipe r : recipes)
+        {
+            if (r.getName().equalsIgnoreCase(recipeName))
+            {
+                r.scaleRecipe(factor);
+                System.out.println("Scaled recipe: " + recipeName);
+                return;
+            }
+        }
+        System.out.println("Recipe not found");
     }
     
     /**
