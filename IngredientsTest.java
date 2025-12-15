@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 /**
  * The test class IngredientsTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  (Richard)
+ * @version (1 version number or a date)
  */
 public class IngredientsTest
 {
@@ -43,13 +43,21 @@ public class IngredientsTest
     @Test
     public void IngredientsTest1()
     {
-        Ingredients ingredie1 = new Ingredients();
-        assertEquals(1.0, ingredie1.getAmount(), 0.1);
-        assertEquals("Milk", ingredie1.getName());
-        ingredie1.listAllIngredients();
-        ingredie1.listAllIngredients();
-        ingredie1.listAllIngredients();
+
+    }
+
+    @Test
+    public void testAllMethods()
+    {
+        Ingredients ingredie1 = new Ingredients("carrot", 2.0, UnitOfMeasurement.UNIT);
+        assertEquals(2.0, ingredie1.getAmount(), 0.1);
+        assertEquals("CARROT", ingredie1.getName());
+        ingredie1.scaleAmount(5);
+        ingredie1.toString();
         ingredie1.setAmount(2);
+        assertEquals(20.0, ingredie1.getAmount(), 0.1);
+        ingredie1.toString();
     }
 }
+
 

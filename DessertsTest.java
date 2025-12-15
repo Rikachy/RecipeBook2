@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * The test class DessertsTest.
  *
  * @author  (Richard)
- * @version (a version number or a date)
+ * @version (1)
  */
 public class DessertsTest
 {
@@ -40,31 +40,19 @@ public class DessertsTest
     {
     }
 
-    @Test
-    public void TestingDesserts()
-    {
-        Desserts desserts1 = new Desserts();
-        assertEquals(false, desserts1.checkBaked());
-        assertEquals(false, desserts1.isGlutenFree());
-        //Default state of a boolean is false
-        
-        
-        
-        
-        
-        
-        
-    }
 
     @Test
-    public void Test2Dessers()
+    public void testAllMethods()
     {
-        Desserts desserts2 = new Desserts();
-        assertEquals("Super Duper Sweet", desserts2.getSweetLevel());
-        
-        assertEquals("Soft", desserts2.getTexture());
-        
+        Desserts desserts1 = new Desserts("banana pie", true, "Crunchy", "high");
+        assertEquals(true, desserts1.checkBaked());
+        assertEquals("high", desserts1.getSweetLevel());
+        assertEquals("crunchy", desserts1.getTexture());
+        assertEquals(false, desserts1.isGlutenFree());
+        desserts1.setTexture("crispy");
+        assertEquals("crispy", desserts1.getTexture());
     }
 }
+
 
 

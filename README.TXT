@@ -24,3 +24,12 @@ Add new steps, tags, or comments to any recipe.
 Check a recipe’s average rating or most frequent rating (mode).
 Scale ingredients if you want to change recipe portions.
 Print recipe details to see description, steps, ingredients, and comments.
+
+Limitations
+When adding a comment to a specific recipe. You have to match the words almost
+perfectly (doesn't matter if lowercase/uppercase). It won't recongnize if there's an extra space. 
+
+scaled, method doesn't return the fully scaled quantity.
+
+Search by tag in recipebook and setting the UnitOfMeasurement in ingredients can be hard to navigate. 
+You have to input Tags.(tag you want)/UnitOfMeasurement.(unit you want)

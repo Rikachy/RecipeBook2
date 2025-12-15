@@ -45,7 +45,7 @@ public class DrinksTest
     public void testContainsAlchohol()
     {
         Drinks drinks1 = new Drinks("margarita", true, false, false);
-        assertEquals(true, drinks1.containsAlchohol());
+        assertEquals(true, drinks1.containsAlcohol());
     }
 
     @Test
